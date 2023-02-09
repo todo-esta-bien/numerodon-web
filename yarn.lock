@@ -5950,6 +5950,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@todo-esta-bien/numerodon@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@todo-esta-bien/numerodon@npm:0.5.0"
+  checksum: fd64e091659dba916c325ad135c706d1a155b0bd492bc95eedde8e1a1309d7d2602ceba98c8b1df1a2f19dadf8f53b66726fcabde2195b580efb616ebfa99024
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -23635,6 +23642,7 @@ __metadata:
     "@redwoodjs/forms": 4.1.1
     "@redwoodjs/router": 4.1.1
     "@redwoodjs/web": 4.1.1
+    "@todo-esta-bien/numerodon": ^0.5.0
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2
