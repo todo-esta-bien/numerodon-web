@@ -3,6 +3,9 @@
 const config = {
   rootDir: '../',
   preset: '@redwoodjs/testing/config/jest/web',
+   transformIgnorePatterns: [
+    "node_modules/(?!@todo-esta-bien|@otracosa)"
+  ],
 }
 
 module.exports = config
