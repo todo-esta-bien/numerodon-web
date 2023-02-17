@@ -1,6 +1,6 @@
 import { MetaTags } from '@redwoodjs/web'
 import { useState } from 'react'
-import TantricGrid from 'src/components/TantricGrid/TantricGrid'
+import TantricProfile from 'src/components/TantricProfile/TantricProfile'
 
 const HomePage = () => {
   const [birthday, setBirthday] = useState<Date>(new Date(Date.now()))
@@ -25,7 +25,7 @@ const HomePage = () => {
             />
           </label>
         </p>
-        <TantricGrid birthday={birthday} />
+        <TantricProfile birthday={birthday} />
       </main>
     </>
   )

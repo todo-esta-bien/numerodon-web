@@ -1,11 +1,11 @@
-import { TantricProfile } from '@todo-esta-bien/numerodon'
+import { TantricProfile as TantricNumProfile } from '@todo-esta-bien/numerodon'
 
-interface ITantricGrid {
+interface ITantricProfile {
   birthday: Date
 }
 
-const TantricGrid = ({ birthday }: ITantricGrid) => {
-  const tantricProfile = new TantricProfile({
+const TantricProfile = ({ birthday }: ITantricProfile) => {
+  const tantricProfile = new TantricNumProfile({
     day: birthday.getUTCDate(),
     month: birthday.getUTCMonth() + 1,
     year: birthday.getUTCFullYear(),
@@ -44,4 +44,4 @@ const TantricGrid = ({ birthday }: ITantricGrid) => {
   )
 }
 
-export default TantricGrid
+export default TantricProfile
