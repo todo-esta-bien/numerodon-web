@@ -4,8 +4,8 @@
 // ```tsx
 import type { ComponentStory } from '@storybook/react'
 //
-// export const generated: ComponentStory<typeof TantricGrid> = (args) => {
-//   return <TantricGrid {...args} />
+// export const generated: ComponentStory<typeof TantricProfile> = (args) => {
+//   return <TantricProfile {...args} />
 // }
 // ```
 //
@@ -13,15 +13,15 @@ import type { ComponentStory } from '@storybook/react'
 
 import type { ComponentMeta } from '@storybook/react'
 
-import TantricGrid from './TantricGrid'
+import TantricProfile from './TantricProfile'
 
-export const generated: ComponentStory<typeof TantricGrid> = (args) => {
-  return <TantricGrid {...args} />
+export const generated: ComponentStory<typeof TantricProfile> = (args) => {
+  return <TantricProfile {...args} />
 }
 
 export default {
-  title: 'Components/TantricGrid',
-  component: TantricGrid,
+  title: 'Components/TantricProfile',
+  component: TantricProfile,
   args: {
     birthday: new Date(1994, 11, 27),
   },
@@ -30,4 +30,4 @@ export default {
       control: 'date',
     },
   },
-} as ComponentMeta<typeof TantricGrid>
+} as ComponentMeta<typeof TantricProfile>
