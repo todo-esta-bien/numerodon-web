@@ -36,16 +36,20 @@ const PythagoreanProfile = ({
       value: pythagoreanProfile.expression,
     },
     {
-      name: 'Misión Cósmica',
-      value: pythagoreanProfile.cosmicMission,
-    },
-    {
       name: 'Equilibrio',
       value: pythagoreanProfile.balance,
     },
     {
+      name: 'Camino de Vida',
+      value: pythagoreanProfile.lifePath,
+    },
+    {
       name: 'Fuerza',
       value: pythagoreanProfile.strength,
+    },
+    {
+      name: 'Misión Cósmica',
+      value: pythagoreanProfile.cosmicMission,
     },
     {
       name: 'Iniciación Espiritual',
