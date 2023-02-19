@@ -69,7 +69,7 @@ const HomePage = () => {
             </label>
           </div>
           {inputElements.map((element) => (
-            <div>
+            <div key={element.inputName}>
               <label className="label">
                 <span className="label-text">{element.label}</span>
               </label>
