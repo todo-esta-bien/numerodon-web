@@ -10,7 +10,7 @@ describe('PythagoreanProfile', () => {
     expect(() => {
       render(
         <PythagoreanProfile
-          birthday={new Date(1994, 12, 27)}
+          birthday={new Date(1995, 10, 7)}
           firstNames="Miley"
           fatherLastNames="Ray"
           motherLastNames="Cyrus"
