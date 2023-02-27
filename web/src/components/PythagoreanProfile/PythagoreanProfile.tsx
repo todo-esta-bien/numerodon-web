@@ -59,8 +59,8 @@ const PythagoreanProfile = ({
 
   return (
     <div className="prose">
-      <h2>{pythagoreanProfile.completeName}</h2>
-      <table className="table-zebra table table-auto">
+      <h2>Pitagórica para: {pythagoreanProfile.completeName}</h2>
+      <table className="table-zebra table-compact table table-auto">
         <thead>
           <tr>
             <th>Tipo de Número</th>
