@@ -21,7 +21,7 @@ const HomePage = () => {
 
   const inputElements = [
     {
-      label: 'Nombre (no apellidos)',
+      label: 'Nombre(s)',
       groupLabel: 'Nombre(s)',
       placeholder: 'Leticia Verónica',
       inputName: 'firstNames',
@@ -48,15 +48,15 @@ const HomePage = () => {
         <header className="prose">
           <h1>Hola 👋!</h1>
         </header>
-        <section>
-          <div>
-            <label className="label">
+        <section className="flex flex-col md:flex-row md:flex-wrap">
+          <div className="form-control my-1 md:mx-1">
+            <label className="label md:hidden">
               <span className="label-text">La fecha de nacimiento</span>
             </label>
-            <label className="input-group">
-              <span>Fecha</span>
+            <label className="block md:input-group">
+              <span className="hidden md:label-text">Fecha</span>
               <input
-                className="input-bordered input md:ml-4"
+                className="input-bordered input"
                 type="date"
                 defaultValue={userData.birthday.toISOString().split('T')[0]}
                 onChange={(e) =>
@@ -70,14 +70,14 @@ const HomePage = () => {
             </label>
           </div>
           {inputElements.map((element) => (
-            <div key={element.inputName}>
-              <label className="label">
+            <div className="form-control my-1 md:mx-1" key={element.inputName}>
+              <label className="label md:hidden">
                 <span className="label-text">{element.label}</span>
               </label>
-              <label className="input-group">
-                <span>{element.groupLabel}</span>
+              <label className="block md:input-group">
+                <span className="hidden md:label-text">{element.label}</span>
                 <input
-                  className="input-bordered input md:ml-4"
+                  className="input-bordered input"
                   type="text"
                   onChange={(e) =>
                     setUserData((prevData: UserData) => ({
