@@ -119,7 +119,7 @@ const PythagoreanPinnacle = ({ birthday }: IPythagoreanPinnacle) => {
   return (
     <div className="prose">
       <h2>Pináculo</h2>
-      <table className="table-zebra table table-auto">
+      <table className="table-zebra table-compact table table-auto">
         <thead>
           <tr>
             <th>Tipo de Número</th>
