@@ -1,5 +1,5 @@
 import { MetaTags } from '@redwoodjs/web'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import TantricProfile from 'src/components/TantricProfile/TantricProfile'
 import PythagoreanProfile from 'src/components/PythagoreanProfile/PythagoreanProfile'
 import PythagoreanPinnacle from 'src/components/PythagoreanPinnacle/PythagoreanPinnacle'
@@ -8,18 +8,46 @@ type UserData = {
   firstNames: string | null
   fatherLastNames: string | null
   motherLastNames: string | null
-  birthday: Date
+}
+
+type InputElement = {
+  label: string
+  groupLabel: string
+  placeholder: string
+  inputName: keyof UserData
 }
 
 const HomePage = () => {
+  const params: URLSearchParams = new URLSearchParams(window.location.search)
+
+  const urlBirthday: string | null = params.get('birthday')
+  const [birthday, setBirthday] = useState<Date>(new Date(urlBirthday || Date.now()))
+
+  const urlFirstNames: string = params.get('firstNames') || ''
+  const urlFatherLastNames: string = params.get('fatherLastNames') || ''
+  const urlMotherLastNames: string = params.get('motherLastNames') || ''
   const [userData, setUserData] = useState<UserData>({
-    birthday: new Date(Date.now()),
-    firstNames: '',
-    fatherLastNames: '',
-    motherLastNames: '',
+    firstNames: decodeURIComponent(urlFirstNames),
+    fatherLastNames: decodeURIComponent(urlFatherLastNames),
+    motherLastNames: decodeURIComponent(urlMotherLastNames),
   })
 
-  const inputElements = [
+  // Setting URL after each input change
+  useEffect(() => {
+    const params: URLSearchParams = new URLSearchParams(window.location.search)
+
+    // Using encodeURIComponent because URLSearchParams uses www-form-urlencoded, and that may
+    // lead to unexpected results, such as spaces being encoded as +
+    birthday && params.set('birthday', birthday.toISOString().split('T')[0])
+    userData.firstNames && params.set('firstNames', encodeURIComponent(userData.firstNames))
+    userData.fatherLastNames && params.set('fatherLastNames', encodeURIComponent(userData.fatherLastNames))
+    userData.motherLastNames && params.set('motherLastNames', encodeURIComponent(userData.motherLastNames))
+
+    // (state, title, URL)
+    window.history.replaceState({}, '', `${window.location.pathname}?${params}`)
+  }, [birthday, userData])
+
+  const inputElements: InputElement[] = [
     {
       label: 'Nombre(s)',
       groupLabel: 'Nombre(s)',
@@ -58,18 +86,13 @@ const HomePage = () => {
               <input
                 className="input-bordered input"
                 type="date"
-                defaultValue={userData.birthday.toISOString().split('T')[0]}
-                onChange={(e) =>
-                  setUserData((prevData: UserData) => ({
-                    ...prevData,
-                    birthday: new Date(e.target.value),
-                  }))
-                }
+                defaultValue={birthday.toISOString().split('T')[0]}
+                onChange={(e) => setBirthday(new Date(e.target.value))}
                 name="birthday"
               />
             </label>
           </div>
-          {inputElements.map((element) => (
+          {inputElements.map((element: InputElement) => (
             <div className="form-control my-1 md:mx-1" key={element.inputName}>
               <label className="label md:hidden">
                 <span className="label-text">{element.label}</span>
@@ -79,6 +102,7 @@ const HomePage = () => {
                 <input
                   className="input-bordered input"
                   type="text"
+                  value={userData[element.inputName]}
                   onChange={(e) =>
                     setUserData((prevData: UserData) => ({
                       ...prevData,
@@ -93,9 +117,9 @@ const HomePage = () => {
           ))}
         </section>
 
-        <TantricProfile birthday={userData.birthday} />
-        <PythagoreanProfile {...userData} />
-        <PythagoreanPinnacle birthday={userData.birthday} />
+        <TantricProfile birthday={birthday} />
+        <PythagoreanProfile birthday={birthday} {...userData} />
+        <PythagoreanPinnacle birthday={birthday} />
       </main>
     </>
   )

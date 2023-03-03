@@ -13,9 +13,9 @@
     ]
   },
   "dependencies": {
-    "@redwoodjs/forms": "4.1.4",
-    "@redwoodjs/router": "4.1.4",
-    "@redwoodjs/web": "4.1.4",
+    "@redwoodjs/forms": "4.2.2",
+    "@redwoodjs/router": "4.2.2",
+    "@redwoodjs/web": "4.2.2",
     "@todo-esta-bien/numerodon": "^0.18.1",
     "daisyui": "^2.50.0",
     "prop-types": "15.8.1",
