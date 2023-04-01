@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import {
   EvolutiveProfile as EvolutiveNumProfile,
   EvolutiveNumbers,
   reduceNumberDigits,
+  repeatArrayElements,
 } from '@todo-esta-bien/numerodon'
 
 interface IEvolutiveProfile {
@@ -21,46 +23,90 @@ const EvolutiveProfile = ({ birthday, firstNames, fatherLastNames, motherLastNam
     motherLastNames: motherLastNames,
   })
 
+  const [columnsAmount, setColumnsAmount] = useState<number>(9)
+
+  const colorsArray = [
+    '#C7F5AB',
+    '#A4ECF4',
+    '#AA9CD6',
+    '#EBAFAE',
+    '#B1D496',
+    '#B0F3F5',
+    '#BDB0F7',
+    '#D6A1A3',
+    '#EAD7B1',
+  ]
+
+  const repeatedColors = repeatArrayElements(colorsArray, columnsAmount)
+  const repeatedResidents = repeatArrayElements(evolutiveProfile.residents, columnsAmount)
+  const repeatedCycles = repeatArrayElements(
+    Array.from({ length: 9 }, (_, idx) => idx + 1),
+    columnsAmount
+  )
+
   return (
-    <div className="prose">
+    <section className="prose">
       <h2>Ciclos de Vida - Tabla Evolutiva</h2>
-      <table className="table-zebra table-compact table table-auto">
+      <div className="flex justify-end">
+        <button
+          className="btn-xs btn-circle btn mr-1"
+          onClick={() => setColumnsAmount((prevAmount) => prevAmount - (prevAmount > 1 ? 1 : 0))}
+        >
+          -
+        </button>
+        <button className="btn-xs btn-circle btn" onClick={() => setColumnsAmount((prevAmount) => prevAmount + 1)}>
+          +
+        </button>
+      </div>
+      <table className="table-zebra table-compact m-0 table table-auto border-collapse">
         <thead>
           <tr>
             <th>Habitantes</th>
             <th></th>
-            {evolutiveProfile.residents.map((resident, idx) => (
+            <th></th>
+            {repeatedResidents.map((resident, idx) => (
               <th key={idx}>{resident}</th>
             ))}
           </tr>
           <tr>
             <th>Ciclos</th>
             <th></th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-            <th>8</th>
-            <th>9</th>
+            <th></th>
+            {repeatedCycles.map((cycle, idx) => (
+              <th
+                key={idx}
+                className="font-normal"
+                style={{
+                  backgroundColor: repeatedColors[idx],
+                }}
+              >
+                {cycle}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
           {evolutiveProfile.personalYears.map((personalYear, rowIdx) => {
-            const colValues: EvolutiveNumbers = new Array(9)
-              .fill(0)
-              .map((_, colIdx) => rowIdx + 9 * colIdx) as EvolutiveNumbers
+            const colValues: EvolutiveNumbers = Array.from(
+              { length: columnsAmount },
+              (_, idx) => rowIdx + 9 * idx
+            ) as EvolutiveNumbers
             const residentIdx: number = reduceNumberDigits({ sumRecursively: true })(personalYear) - 1
             return (
               <tr key={rowIdx}>
-                <td>{evolutiveProfile.residents[residentIdx]}</td>
-                <td>{personalYear}</td>
-                {colValues.map((colValue, innerIdx) => (
-                  <td key={innerIdx}>
+                <td></td>
+                <td className="font-bold">{evolutiveProfile.residents[residentIdx]}</td>
+                <td
+                  style={{
+                    backgroundColor: colorsArray[residentIdx],
+                  }}
+                >
+                  {personalYear}
+                </td>
+                {colValues.map((colValue, idx) => (
+                  <td key={idx} className="border border-slate-700">
                     <div className="flex flex-col">
-                      <span>{colValue}</span>
+                      <span className="font-light">{colValue}</span>
                       <span>{evolutiveProfile.year + colValue}</span>
                     </div>
                   </td>
@@ -70,7 +116,7 @@ const EvolutiveProfile = ({ birthday, firstNames, fatherLastNames, motherLastNam
           })}
         </tbody>
       </table>
-    </div>
+    </section>
   )
 }
 
