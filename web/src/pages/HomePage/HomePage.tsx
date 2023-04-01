@@ -2,6 +2,7 @@ import { MetaTags } from '@redwoodjs/web'
 import { useState, useEffect } from 'react'
 import TantricProfile from 'src/components/TantricProfile/TantricProfile'
 import PythagoreanProfile from 'src/components/PythagoreanProfile/PythagoreanProfile'
+import EvolutiveProfile from 'src/components/EvolutiveProfile/EvolutiveProfile'
 import PythagoreanPinnacle from 'src/components/PythagoreanPinnacle/PythagoreanPinnacle'
 
 type UserData = {
@@ -120,6 +121,7 @@ const HomePage = () => {
         <TantricProfile birthday={birthday} />
         <PythagoreanProfile birthday={birthday} {...userData} />
         <PythagoreanPinnacle birthday={birthday} />
+        <EvolutiveProfile birthday={birthday} {...userData} />
       </main>
     </>
   )
