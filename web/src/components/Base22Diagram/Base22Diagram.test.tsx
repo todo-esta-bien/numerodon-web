@@ -8,7 +8,7 @@ import Base22Diagram from './Base22Diagram'
 describe('Base22Diagram', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<Base22Diagram />)
+      render(<Base22Diagram birthday={new Date(1994, 12, 27)}/>)
     }).not.toThrow()
   })
 })
