@@ -128,146 +128,146 @@ const Base22Diagram = ({birthday}: IBase22Diagram) => {
         {/* Textos Abajo */}
 
         <text className="st8 st9 st10" transform="translate(186 429.4)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Yo
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(262 429.34)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Mensaje
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Padre
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(100 429.34)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Mensaje
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Madre
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(34 429.34)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Número de
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Resistencia
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(337 428.01)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Personalidad
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Profunda
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(394 388.15)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Búsqueda
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Espiritual
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(261 318.41)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Comportamiento
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Externo Social
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(100 318.68)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Comportamiento
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Interno Social
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(188 523.63)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Nudo de Dolor
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(103 554.83)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Comportamiento
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Interior de
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Defensa
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(265 554.88)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Comportamiento
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Exterior de
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Defensa
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(188 621.71)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Personalidad
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Exterior Defensa
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(336 621.47)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Búsqueda de Salida
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Exterior (de Escape)
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(35 621.47)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Número de
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Huida
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(170.74 355)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Nudo
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Emocional
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(382.72 337.03)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Búsqueda
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Emocional
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(183 249.9)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Personalidad Externa Social
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Pilar Profesional
           </tspan>
         </text>
         <text className="st8 st9 st10" transform="translate(338 248.17)">
-          <tspan x="0" dy="0" text-anchor="middle">
+          <tspan x="0" dy="0" textAnchor="middle">
             Búsqueda
           </tspan>
-          <tspan x="0" dy="1.2em" text-anchor="middle">
+          <tspan x="0" dy="1.2em" textAnchor="middle">
             Armonía
           </tspan>
         </text>

@@ -16,6 +16,7 @@ import type { ComponentMeta } from '@storybook/react'
 import Base22Diagram from './Base22Diagram'
 
 export const generated: ComponentStory<typeof Base22Diagram> = (args) => {
+  args.birthday = new Date(args.birthday)
   return <Base22Diagram {...args}/>
 }
 

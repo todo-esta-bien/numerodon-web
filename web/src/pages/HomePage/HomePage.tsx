@@ -36,6 +36,7 @@ const HomePage = () => {
 
   // Setting URL after each input change
   useEffect(() => {
+    // TODO: Improve this
     const params: URLSearchParams = new URLSearchParams(window.location.search)
 
     // Using encodeURIComponent because URLSearchParams uses www-form-urlencoded, and that may
@@ -72,7 +73,7 @@ const HomePage = () => {
 
   return (
     <>
-      <MetaTags title="Home" description="Home page" />
+      <MetaTags title={`${userData.firstNames} ${userData.fatherLastNames} ${userData.motherLastNames}`} description="Home page" />
 
       <main>
         <header className="prose">
