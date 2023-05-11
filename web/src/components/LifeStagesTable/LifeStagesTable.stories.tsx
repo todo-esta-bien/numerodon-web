@@ -4,8 +4,8 @@
 // ```tsx
 import type { ComponentStory } from '@storybook/react'
 //
-// export const generated: ComponentStory<typeof Base22Diagram> = (args) => {
-//   return <Base22Diagram {...args} />
+// export const generated: ComponentStory<typeof LifeStagesTable> = (args) => {
+//   return <LifeStagesTable {...args} />
 // }
 // ```
 //
@@ -13,22 +13,22 @@ import type { ComponentStory } from '@storybook/react'
 
 import type { ComponentMeta } from '@storybook/react'
 
-import Base22Diagram from './Base22Diagram'
+import LifeStagesTable from './LifeStagesTable'
 
-export const generated: ComponentStory<typeof Base22Diagram> = (args) => {
+export const generated: ComponentStory<typeof LifeStagesTable> = (args) => {
   args.birthday = new Date(args.birthday)
-  return <Base22Diagram {...args}/>
+  return <LifeStagesTable {...args} />
 }
 
 export default {
-  title: 'Components/Base22Diagram',
-  component: Base22Diagram,
+  title: 'Components/LifeStagesTable',
+  component: LifeStagesTable,
   args: {
-    birthday: new Date(1963, 2, 13),
+    birthday: new Date(1960, 1, 24),
   },
   argTypes: {
     birthday: {
       control: 'date',
-    },
+    }
   },
-} as ComponentMeta<typeof Base22Diagram>
+} as ComponentMeta<typeof LifeStagesTable>
