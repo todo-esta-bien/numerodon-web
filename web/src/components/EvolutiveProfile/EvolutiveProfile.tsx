@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import DashboardCard from 'src/components/DashboardCard'
 import {
   EvolutiveProfile as EvolutiveNumProfile,
   EvolutiveNumbers,
@@ -45,80 +46,82 @@ const EvolutiveProfile = ({ birthday, firstNames, fatherLastNames, motherLastNam
   )
 
   return (
-    <section className="prose">
-      <h2>Ciclos de Vida - Tabla Evolutiva</h2>
-      <div className="flex justify-end">
-        <button
-          className="btn-xs btn-circle btn mr-1"
-          onClick={() => setColumnsAmount((prevAmount) => prevAmount - (prevAmount > 1 ? 1 : 0))}
-        >
-          -
-        </button>
-        <button className="btn-xs btn-circle btn" onClick={() => setColumnsAmount((prevAmount) => prevAmount + 1)}>
-          +
-        </button>
-      </div>
-      <div className="w-full overflow-x-scroll">
-        <table className="table-zebra table-compact m-0 table table-auto border-collapse">
-          <thead>
-            <tr>
-              <th>Habitantes</th>
-              <th></th>
-              <th></th>
-              {repeatedResidents.map((resident, idx) => (
-                <th key={idx}>{resident}</th>
-              ))}
-            </tr>
-            <tr>
-              <th>Ciclos</th>
-              <th></th>
-              <th></th>
-              {repeatedCycles.map((cycle, idx) => (
-                <th
-                  key={idx}
-                  className="font-normal"
-                  style={{
-                    backgroundColor: repeatedColors[idx],
-                  }}
-                >
-                  {cycle}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {evolutiveProfile.personalYears.map((personalYear, rowIdx) => {
-              const colValues: EvolutiveNumbers = Array.from(
-                { length: columnsAmount },
-                (_, idx) => rowIdx + 9 * idx
-              ) as EvolutiveNumbers
-              const residentIdx: number = reduceNumberDigits({ sumRecursively: true })(personalYear) - 1
-              return (
-                <tr key={rowIdx}>
-                  <td></td>
-                  <td className="font-bold">{evolutiveProfile.residents[residentIdx]}</td>
-                  <td
+    <DashboardCard>
+      <section className="prose">
+        <h2>Ciclos de Vida - Tabla Evolutiva</h2>
+        <div className="flex justify-end">
+          <button
+            className="btn-xs btn-circle btn mr-1"
+            onClick={() => setColumnsAmount((prevAmount) => prevAmount - (prevAmount > 1 ? 1 : 0))}
+          >
+            -
+          </button>
+          <button className="btn-xs btn-circle btn" onClick={() => setColumnsAmount((prevAmount) => prevAmount + 1)}>
+            +
+          </button>
+        </div>
+        <div className="w-full overflow-x-scroll">
+          <table className="table-zebra table-compact m-0 table table-auto border-collapse">
+            <thead>
+              <tr>
+                <th>Habitantes</th>
+                <th></th>
+                <th></th>
+                {repeatedResidents.map((resident, idx) => (
+                  <th key={idx}>{resident}</th>
+                ))}
+              </tr>
+              <tr>
+                <th>Ciclos</th>
+                <th></th>
+                <th></th>
+                {repeatedCycles.map((cycle, idx) => (
+                  <th
+                    key={idx}
+                    className="font-normal"
                     style={{
-                      backgroundColor: colorsArray[residentIdx],
+                      backgroundColor: repeatedColors[idx],
                     }}
                   >
-                    {personalYear}
-                  </td>
-                  {colValues.map((colValue, idx) => (
-                    <td key={idx} className="border border-slate-700">
-                      <div className="flex flex-col">
-                        <span className="font-light">{colValue}</span>
-                        <span>{evolutiveProfile.year + colValue}</span>
-                      </div>
+                    {cycle}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {evolutiveProfile.personalYears.map((personalYear, rowIdx) => {
+                const colValues: EvolutiveNumbers = Array.from(
+                  { length: columnsAmount },
+                  (_, idx) => rowIdx + 9 * idx
+                ) as EvolutiveNumbers
+                const residentIdx: number = reduceNumberDigits({ sumRecursively: true })(personalYear) - 1
+                return (
+                  <tr key={rowIdx}>
+                    <td></td>
+                    <td className="font-bold">{evolutiveProfile.residents[residentIdx]}</td>
+                    <td
+                      style={{
+                        backgroundColor: colorsArray[residentIdx],
+                      }}
+                    >
+                      {personalYear}
                     </td>
-                  ))}
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-      </div>
-    </section>
+                    {colValues.map((colValue, idx) => (
+                      <td key={idx} className="border border-slate-700">
+                        <div className="flex flex-col">
+                          <span className="font-light">{colValue}</span>
+                          <span>{evolutiveProfile.year + colValue}</span>
+                        </div>
+                      </td>
+                    ))}
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </DashboardCard>
   )
 }
 
