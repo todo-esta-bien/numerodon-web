@@ -5,7 +5,10 @@ import PythagoreanProfile from 'src/components/PythagoreanProfile/PythagoreanPro
 import EvolutiveProfile from 'src/components/EvolutiveProfile/EvolutiveProfile'
 import PythagoreanPinnacle from 'src/components/PythagoreanPinnacle/PythagoreanPinnacle'
 import Base22Diagram from 'src/components/Base22Diagram/Base22Diagram'
+import MainNavbar from 'src/components/MainNavbar/MainNavbar'
 import LifeStagesTable from 'src/components/LifeStagesTable/LifeStagesTable'
+import DateModal from 'src/components/DateModal/DateModal'
+import NameModal from 'src/components/NameModal/NameModal'
 
 type UserData = {
   firstNames: string | null
@@ -72,19 +75,28 @@ const HomePage = () => {
     },
   ]
 
+  const fullName: string = `${userData.firstNames} ${userData.fatherLastNames} ${userData.motherLastNames}`
+
   return (
     <>
-      <MetaTags title={`${userData.firstNames} ${userData.fatherLastNames} ${userData.motherLastNames}`} description="Home page" />
+      <MetaTags title={fullName} description="Home page" />
 
-      <main>
+      <main className='bg-base-300 p-6'>
         <header className="prose">
           <h1>Hola 👋!</h1>
         </header>
+        <MainNavbar birthday={birthday} fullName={fullName} />
         <section className="flex flex-col md:flex-row md:flex-wrap">
+        </section>
+
+        <TantricProfile birthday={birthday} />
+        <PythagoreanProfile birthday={birthday} {...userData} />
+        <PythagoreanPinnacle birthday={birthday} />
+        <LifeStagesTable birthday={birthday} />
+        <EvolutiveProfile birthday={birthday} {...userData} />
+        <Base22Diagram birthday={birthday} />
+        <DateModal>
           <div className="form-control my-1 md:mx-1">
-            <label className="label md:hidden">
-              <span className="label-text">La fecha de nacimiento</span>
-            </label>
             <label className="block md:input-group">
               <span className="hidden md:label-text">Fecha</span>
               <input
@@ -96,6 +108,8 @@ const HomePage = () => {
               />
             </label>
           </div>
+        </DateModal>
+        <NameModal {...userData}>
           {inputElements.map((element: InputElement) => (
             <div className="form-control my-1 md:mx-1" key={element.inputName}>
               <label className="label md:hidden">
@@ -119,14 +133,7 @@ const HomePage = () => {
               </label>
             </div>
           ))}
-        </section>
-
-        <TantricProfile birthday={birthday} />
-        <PythagoreanProfile birthday={birthday} {...userData} />
-        <PythagoreanPinnacle birthday={birthday} />
-        <LifeStagesTable birthday={birthday} />
-        <EvolutiveProfile birthday={birthday} {...userData} />
-        <Base22Diagram birthday={birthday} />
+        </NameModal>
       </main>
     </>
   )
