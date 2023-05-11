@@ -1,4 +1,5 @@
 import { PythagoreanProfile as PythagoreanNumProfile } from '@todo-esta-bien/numerodon'
+import DashboardCard from 'src/components/DashboardCard'
 
 interface IPythagoreanProfile {
   birthday: Date
@@ -58,8 +59,9 @@ const PythagoreanProfile = ({
   ]
 
   return (
+  <DashboardCard>
     <div className="prose">
-      <h2>Pitagórica para: {pythagoreanProfile.completeName}</h2>
+      <h2>Tabla Pitagórica</h2>
       <table className="table-zebra table-compact table table-auto">
         <thead>
           <tr>
@@ -77,6 +79,8 @@ const PythagoreanProfile = ({
         </tbody>
       </table>
     </div>
+
+  </DashboardCard>
   )
 }
 
