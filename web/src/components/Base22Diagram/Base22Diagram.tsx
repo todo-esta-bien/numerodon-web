@@ -1,4 +1,4 @@
-import {Base22Profile} from '@todo-esta-bien/numerodon'
+import {Base22Profile, reduceNumberDigits} from '@todo-esta-bien/numerodon'
 import './Base22Diagram.css'
 
 interface IBase22Diagram {
@@ -12,6 +12,11 @@ const Base22Diagram = ({birthday}: IBase22Diagram) => {
     month: birthday.getUTCMonth() + 1,
     year: birthday.getUTCFullYear(),
   })
+
+  const displayReducedNumber = (reducedNumber: number): string => {
+    const numberReducer = reduceNumberDigits({sumRecursively: true, stopNumbers: [10, 12, 13, 14, 15, 16, 17 ,18, 19, 20, 21, 22]})
+    return reducedNumber > 22 ?`${reducedNumber}/${numberReducer(reducedNumber)}` :  `${reducedNumber}`;
+  }
 
   return (
     <div className="">
@@ -288,263 +293,263 @@ const Base22Diagram = ({birthday}: IBase22Diagram) => {
         </text>
 
         <text className="st11 st12 st13" transform="translate(385.01 320.97)">
-          {base22Profile.emotionalSearch}
+          {displayReducedNumber(base22Profile.emotionalSearch)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(370 308)">
-          {Math.abs(21 - base22Profile.emotionalSearch)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.emotionalSearch))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(405 308)">
-          {Math.abs(22 - base22Profile.emotionalSearch)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.emotionalSearch))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(383.58 372.53)">
-          {base22Profile.spiritualSearch}
+          {displayReducedNumber(base22Profile.spiritualSearch)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(370 358)">
-          {Math.abs(21 - base22Profile.spiritualSearch)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.spiritualSearch))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(405 358)">
-          {Math.abs(22 - base22Profile.spiritualSearch)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.spiritualSearch))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(176.64 25)">
-          {base22Profile.thirdSpiritualBaseA}
+          {displayReducedNumber(base22Profile.thirdSpiritualBaseA)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(163 13)">
-          {Math.abs(21 - base22Profile.thirdSpiritualBaseA)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.thirdSpiritualBaseA))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(199 13)">
-          {Math.abs(22 - base22Profile.thirdSpiritualBaseA)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.thirdSpiritualBaseA))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(330.77 95)">
-          {base22Profile.secondSpiritualBaseC}
+          {displayReducedNumber(base22Profile.secondSpiritualBaseC)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(314 80)">
-          {Math.abs(21 - base22Profile.secondSpiritualBaseC)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.secondSpiritualBaseC))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(350 80)">
-          {Math.abs(22 - base22Profile.secondSpiritualBaseC)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.secondSpiritualBaseC))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(176.64 95)">
-          {base22Profile.secondSpiritualBaseB}
+          {displayReducedNumber(base22Profile.secondSpiritualBaseB)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(161 82)">
-          {Math.abs(21 - base22Profile.secondSpiritualBaseB)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.secondSpiritualBaseB))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(199 82)">
-          {Math.abs(22 - base22Profile.secondSpiritualBaseB)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.secondSpiritualBaseB))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(27.76 95)">
-          {base22Profile.secondSpiritualBaseA}
+          {displayReducedNumber(base22Profile.secondSpiritualBaseA)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(11 80)">
-          {Math.abs(21 - base22Profile.secondSpiritualBaseA)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.secondSpiritualBaseA))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(45 80)">
-          {Math.abs(22 - base22Profile.secondSpiritualBaseA)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.secondSpiritualBaseA))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(330.77 165)">
-          {base22Profile.firstSpiritualBaseC}
+          {displayReducedNumber(base22Profile.firstSpiritualBaseC)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(314 148)">
-          {Math.abs(21 - base22Profile.firstSpiritualBaseC)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.firstSpiritualBaseC))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(350 148)">
-          {Math.abs(22 - base22Profile.firstSpiritualBaseC)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.firstSpiritualBaseC))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(176.64 165)">
-          {base22Profile.firstSpiritualBaseB}
+          {displayReducedNumber(base22Profile.firstSpiritualBaseB)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(161 150)">
-          {Math.abs(21 - base22Profile.firstSpiritualBaseB)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.firstSpiritualBaseB))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(199 150)">
-          {Math.abs(22 - base22Profile.firstSpiritualBaseB)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.firstSpiritualBaseB))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(27.76 165)">
-          {base22Profile.firstSpiritualBaseA}
+          {displayReducedNumber(base22Profile.firstSpiritualBaseA)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(11 148)">
-          {Math.abs(21 - base22Profile.firstSpiritualBaseA)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.firstSpiritualBaseA))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(45 148)">
-          {Math.abs(22 - base22Profile.firstSpiritualBaseA)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.firstSpiritualBaseA))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(330.77 230.18)">
-          {base22Profile.harmonySearch}
+          {displayReducedNumber(base22Profile.harmonySearch)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(314 216)">
-          {Math.abs(21 - base22Profile.harmonySearch)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.harmonySearch))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(350 216)">
-          {Math.abs(22 - base22Profile.harmonySearch)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.harmonySearch))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(176.64 230.65)">
-          {base22Profile.externalSocialPersonality}
+          {displayReducedNumber(base22Profile.externalSocialPersonality)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(161 216)">
-          {Math.abs(21 - base22Profile.externalSocialPersonality)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.externalSocialPersonality))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(199 216)">
-          {Math.abs(22 - base22Profile.externalSocialPersonality)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.externalSocialPersonality))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(27.76 227)">
-          {base22Profile.emerge}
+          {displayReducedNumber(base22Profile.emerge)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(11 214)">
-          {Math.abs(21 - base22Profile.emerge)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.emerge))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(45 214)">
-          {Math.abs(22 - base22Profile.emerge)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.emerge))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(250.61 301.69)">
-          {base22Profile.externalSocialBehavior}
+          {displayReducedNumber(base22Profile.externalSocialBehavior)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(242 287)">
-          {Math.abs(21 - base22Profile.externalSocialBehavior)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.externalSocialBehavior))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(277 287)">
-          {Math.abs(22 - base22Profile.externalSocialBehavior)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.externalSocialBehavior))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(90.58 302.88)">
-          {base22Profile.internalSocialBehavior}
+          {displayReducedNumber(base22Profile.internalSocialBehavior)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(76 287)">
-          {Math.abs(21 - base22Profile.internalSocialBehavior)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.internalSocialBehavior))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(112 287)">
-          {Math.abs(22 - base22Profile.internalSocialBehavior)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.internalSocialBehavior))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(178.87 341.21)">
-          {base22Profile.emotionalKnot}
+          {displayReducedNumber(base22Profile.emotionalKnot)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(161 327)">
-          {Math.abs(21 - base22Profile.emotionalKnot)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.emotionalKnot))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(199 327)">
-          {Math.abs(22 - base22Profile.emotionalKnot)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.emotionalKnot))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(332.4 413.47)">
-          {base22Profile.deepPersonality}
+          {displayReducedNumber(base22Profile.deepPersonality)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(312 400)">
-          {Math.abs(21 - base22Profile.deepPersonality)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.deepPersonality))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(348 400)">
-          {Math.abs(22 - base22Profile.deepPersonality)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.deepPersonality))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(259.46 413.91)">
-          {base22Profile.reducedYear}
+          {displayReducedNumber(base22Profile.reducedYear)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(242 400)">
-          {Math.abs(21 - base22Profile.reducedYear)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.reducedYear))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(277 400)">
-          {Math.abs(22 - base22Profile.reducedYear)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.reducedYear))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(178.87 413.77)">
-          {base22Profile.reducedMonth}
+          {displayReducedNumber(base22Profile.reducedMonth)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(161 400)">
-          {Math.abs(21 - base22Profile.reducedMonth)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.reducedMonth))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(199 400)">
-          {Math.abs(22 - base22Profile.reducedMonth)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.reducedMonth))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(94.2 412.81)">
-          {base22Profile.reducedDay}
+          {displayReducedNumber(base22Profile.reducedDay)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(76 400)">
-          {Math.abs(21 - base22Profile.reducedDay)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.reducedDay))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(111 400)">
-          {Math.abs(22 - base22Profile.reducedDay)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.reducedDay))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(25.52 412.81)">
-          {base22Profile.resistanceNumber}
+          {displayReducedNumber(base22Profile.resistanceNumber)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(11 400)">
-          {Math.abs(21 - base22Profile.resistanceNumber)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.resistanceNumber))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(45 400)">
-          {Math.abs(22 - base22Profile.resistanceNumber)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.resistanceNumber))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(179.29 488.2)">
-          {base22Profile.painKnot}
+          {displayReducedNumber(base22Profile.painKnot)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(160 462)">
-          {Math.abs(21 - base22Profile.painKnot)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.painKnot))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(200 462)">
-          {Math.abs(22 - base22Profile.painKnot)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.painKnot))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(253 538.1)">
-          {base22Profile.externalDefenseBehavior}
+          {displayReducedNumber(base22Profile.externalDefenseBehavior)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(242 525)">
-          {Math.abs(21 - base22Profile.externalDefenseBehavior)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.externalDefenseBehavior))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(277 525)">
-          {Math.abs(22 - base22Profile.externalDefenseBehavior)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.externalDefenseBehavior))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(94.2 538.1)">
-          {base22Profile.internalDefenseBehavior}
+          {displayReducedNumber(base22Profile.internalDefenseBehavior)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(80 525)">
-          {Math.abs(21 - base22Profile.internalDefenseBehavior)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.internalDefenseBehavior))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(115 525)">
-          {Math.abs(22 - base22Profile.internalDefenseBehavior)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.internalDefenseBehavior))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(331.73 604.42)">
-          {base22Profile.externalExitSearch}
+          {displayReducedNumber(base22Profile.externalExitSearch)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(312 590)">
-          {Math.abs(21 - base22Profile.externalExitSearch)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.externalExitSearch))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(348 590)">
-          {Math.abs(22 - base22Profile.externalExitSearch)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.externalExitSearch))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(176.85 604.29)">
-          {base22Profile.externalDefensePersonality}
+          {displayReducedNumber(base22Profile.externalDefensePersonality)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(165 590)">
-          {Math.abs(21 - base22Profile.externalDefensePersonality)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.externalDefensePersonality))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(200 590)">
-          {Math.abs(22 - base22Profile.externalDefensePersonality)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.externalDefensePersonality))}
         </text>
 
         <text className="st11 st12 st13" transform="translate(27.29 603.29)">
-          {base22Profile.escapeNumber}
+          {displayReducedNumber(base22Profile.escapeNumber)}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(11 590)">
-          {Math.abs(21 - base22Profile.escapeNumber)}
+          {displayReducedNumber(Math.abs(21 - base22Profile.escapeNumber))}
         </text>
         <text className="st11 st12 st13 st10" transform="translate(45 590)">
-          {Math.abs(22 - base22Profile.escapeNumber)}
+          {displayReducedNumber(Math.abs(22 - base22Profile.escapeNumber))}
         </text>
       </svg>
     </div>

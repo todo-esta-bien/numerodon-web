@@ -6025,10 +6025,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@todo-esta-bien/numerodon@npm:^0.23.0":
-  version: 0.23.0
-  resolution: "@todo-esta-bien/numerodon@npm:0.23.0"
-  checksum: 4d1d42d73bce778e28e63b6068d45f8ea833517a1689a173fc76dfcdeea896bde17a03ac6422e6a473aed3507a6c16985bdb9b92ae81449a855388fae079428b
+"@todo-esta-bien/numerodon@npm:^0.24.0":
+  version: 0.24.0
+  resolution: "@todo-esta-bien/numerodon@npm:0.24.0"
+  checksum: d24ef90b6a669982dea470d19dc88010d0f236555ae46fbb74f10b2461a63ca841b0fc58a28361c0137b0772d8cab7bbda0bf3d035f097aad781579655b1ba88
   languageName: node
   linkType: hard
 
@@ -24334,7 +24334,7 @@ __metadata:
     "@redwoodjs/router": 5.1.0
     "@redwoodjs/web": 5.1.0
     "@tailwindcss/typography": ^0.5.9
-    "@todo-esta-bien/numerodon": ^0.23.0
+    "@todo-esta-bien/numerodon": ^0.24.0
     autoprefixer: ^10.4.13
     daisyui: ^2.50.0
     postcss: ^8.4.21

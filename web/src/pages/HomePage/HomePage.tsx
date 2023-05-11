@@ -5,6 +5,7 @@ import PythagoreanProfile from 'src/components/PythagoreanProfile/PythagoreanPro
 import EvolutiveProfile from 'src/components/EvolutiveProfile/EvolutiveProfile'
 import PythagoreanPinnacle from 'src/components/PythagoreanPinnacle/PythagoreanPinnacle'
 import Base22Diagram from 'src/components/Base22Diagram/Base22Diagram'
+import LifeStagesTable from 'src/components/LifeStagesTable/LifeStagesTable'
 
 type UserData = {
   firstNames: string | null
@@ -123,6 +124,7 @@ const HomePage = () => {
         <TantricProfile birthday={birthday} />
         <PythagoreanProfile birthday={birthday} {...userData} />
         <PythagoreanPinnacle birthday={birthday} />
+        <LifeStagesTable birthday={birthday} />
         <EvolutiveProfile birthday={birthday} {...userData} />
         <Base22Diagram birthday={birthday} />
       </main>
