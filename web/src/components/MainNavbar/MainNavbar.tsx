@@ -3,7 +3,7 @@ interface IMainNavbarProps {
   birthday: Date
 }
 
-const MainNavbar = ({ fullName, birthday}: IMainNavbarProps) => {
+const MainNavbar = ({ fullName, birthday }: IMainNavbarProps) => {
   const formatOptions: Intl.DateTimeFormatOptions = {
     weekday: 'long',
     year: 'numeric',
@@ -18,10 +18,12 @@ const MainNavbar = ({ fullName, birthday}: IMainNavbarProps) => {
   )
 
   return (
-    <div className="navbar bg-base-100 shadow rounded-2xl">
-      <div className="flex-1">
-       <label htmlFor="name-modal" className="btn btn-ghost capitalize text-xl">
-          {fullName}
+    <div className="navbar bg-base-100 shadow rounded-2xl flex-wrap justify-center">
+      <div className="flex-1 max-w-full">
+        <label htmlFor="name-modal" className="btn btn-ghost capitalize text-xl w-full md:w-min">
+          <p className="truncate text-left">
+            {fullName}
+          </p>
         </label>
       </div>
       <div className="flex-none">
