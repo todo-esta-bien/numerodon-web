@@ -11,33 +11,18 @@ const TantricProfile = ({ birthday }: ITantricProfile) => {
     year: birthday.getUTCFullYear(),
   })
 
-  const formatOptions: Intl.DateTimeFormatOptions = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
-    timeZone: 'UTC',
-  }
-
-  const prettyDate: string = birthday.toLocaleDateString(
-    ['es-mx', 'en-us'],
-    formatOptions
-  )
-
   return (
-    <section className="flex flex-col items-center text-center md:flex-row md:justify-around md:px-16">
-      <div className="prose">
-        <h2 className="p-6 md:px-2">{prettyDate}</h2>
-      </div>
+    <section className="bg-base-100 shadow rounded-2xl flex flex-col prose p-4 max-w-fit">
+      <h2>Esquema Tántrico</h2>
       <div className="flex justify-center divide-x-4 divide-sky-500 text-3xl md:justify-center">
         <div className="grid grid-cols-2 grid-rows-2 gap-2 p-4">
-          <p>{tantricProfile.soul}</p>
-          <p>{tantricProfile.divineGift}</p>
-          <p>{tantricProfile.karma}</p>
-          <p>{tantricProfile.lastLife}</p>
+          <span>{tantricProfile.soul}</span>
+          <span>{tantricProfile.divineGift}</span>
+          <span>{tantricProfile.karma}</span>
+          <span>{tantricProfile.lastLife}</span>
         </div>
         <div className="flex items-center p-4">
-          <p>{tantricProfile.path}</p>
+          <span>{tantricProfile.path}</span>
         </div>
       </div>
     </section>
