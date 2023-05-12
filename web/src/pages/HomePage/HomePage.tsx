@@ -79,22 +79,22 @@ const HomePage = () => {
   const fullName: string = `${userData.firstNames} ${userData.fatherLastNames} ${userData.motherLastNames}`
 
   return (
-    <main className='bg-base-300 flex justify-center'>
+    <main className='bg-base-300 flex w-screen justify-center'>
       <MetaTags title={fullName} description="Home page" />
 
-      <section className='p-6 max-w-8xl'>
+      <section className='p-6 w-full max-w-7xl'>
         <header className="prose mb-4">
           <h1>Hola 👋!</h1>
         </header>
         <MainNavbar birthday={birthday} fullName={fullName} />
 
-        <section className="gap-4 mt-4 flex flex-col dashboard lg:grid">
-          <div className='dashA'><TantricProfile birthday={birthday} /></div>
-          <div className='dashB'><Base22Diagram birthday={birthday} /></div>
-          <div className='dashC'><PythagoreanProfile birthday={birthday} {...userData} /></div>
-          <div className='dashD'><LifeStagesTable birthday={birthday} /></div>
-          <div className='dashE'><PythagoreanPinnacle birthday={birthday} /></div>
-          <div className='dashF'><EvolutiveProfile birthday={birthday} {...userData} /></div>
+        <section className="gap-4 mt-4 flex flex-col dashboard w-full lg:grid">
+          <div className='dashA w-full flex justify-center self-start'><TantricProfile birthday={birthday} /></div>
+          <div className='dashB w-full flex justify-center self-start'><Base22Diagram birthday={birthday} /></div>
+          <div className='dashC w-full flex justify-center self-start'><PythagoreanProfile birthday={birthday} {...userData} /></div>
+          <div className='dashD w-full flex justify-center self-start'><LifeStagesTable birthday={birthday} /></div>
+          <div className='dashE w-full flex justify-center self-start'><PythagoreanPinnacle birthday={birthday} /></div>
+          <div className='dashF w-full flex justify-center self-start'><EvolutiveProfile birthday={birthday} {...userData} /></div>
         </section>
 
         <DateModal>
