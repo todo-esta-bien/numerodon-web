@@ -5,7 +5,11 @@ import PythagoreanProfile from 'src/components/PythagoreanProfile/PythagoreanPro
 import EvolutiveProfile from 'src/components/EvolutiveProfile/EvolutiveProfile'
 import PythagoreanPinnacle from 'src/components/PythagoreanPinnacle/PythagoreanPinnacle'
 import Base22Diagram from 'src/components/Base22Diagram/Base22Diagram'
+import MainNavbar from 'src/components/MainNavbar/MainNavbar'
 import LifeStagesTable from 'src/components/LifeStagesTable/LifeStagesTable'
+import DateModal from 'src/components/DateModal/DateModal'
+import NameModal from 'src/components/NameModal/NameModal'
+import './HomePage.css'
 
 type UserData = {
   firstNames: string | null
@@ -72,19 +76,29 @@ const HomePage = () => {
     },
   ]
 
-  return (
-    <>
-      <MetaTags title={`${userData.firstNames} ${userData.fatherLastNames} ${userData.motherLastNames}`} description="Home page" />
+  const fullName: string = `${userData.firstNames} ${userData.fatherLastNames} ${userData.motherLastNames}`
 
-      <main>
-        <header className="prose">
+  return (
+    <main className='animated-bg bg-base-300 flex w-screen justify-center'>
+      <MetaTags title={fullName} description="Home page" />
+
+      <section className='animated-bg-filter p-6 w-full max-w-7xl'>
+        <header className="prose mb-4">
           <h1>Hola 👋!</h1>
         </header>
-        <section className="flex flex-col md:flex-row md:flex-wrap">
+        <MainNavbar birthday={birthday} fullName={fullName} />
+
+        <section className="gap-4 mt-4 flex flex-col dashboard w-full lg:grid">
+          <div className='dashA w-full flex justify-center self-start'><TantricProfile birthday={birthday} /></div>
+          <div className='dashB w-full flex justify-center self-start'><Base22Diagram birthday={birthday} /></div>
+          <div className='dashC w-full flex justify-center self-start'><PythagoreanProfile birthday={birthday} {...userData} /></div>
+          <div className='dashD w-full flex justify-center self-start'><LifeStagesTable birthday={birthday} /></div>
+          <div className='dashE w-full flex justify-center self-start'><PythagoreanPinnacle birthday={birthday} /></div>
+          <div className='dashF w-full flex justify-center self-start'><EvolutiveProfile birthday={birthday} {...userData} /></div>
+        </section>
+
+        <DateModal>
           <div className="form-control my-1 md:mx-1">
-            <label className="label md:hidden">
-              <span className="label-text">La fecha de nacimiento</span>
-            </label>
             <label className="block md:input-group">
               <span className="hidden md:label-text">Fecha</span>
               <input
@@ -96,6 +110,8 @@ const HomePage = () => {
               />
             </label>
           </div>
+        </DateModal>
+        <NameModal {...userData}>
           {inputElements.map((element: InputElement) => (
             <div className="form-control my-1 md:mx-1" key={element.inputName}>
               <label className="label md:hidden">
@@ -119,16 +135,9 @@ const HomePage = () => {
               </label>
             </div>
           ))}
-        </section>
-
-        <TantricProfile birthday={birthday} />
-        <PythagoreanProfile birthday={birthday} {...userData} />
-        <PythagoreanPinnacle birthday={birthday} />
-        <LifeStagesTable birthday={birthday} />
-        <EvolutiveProfile birthday={birthday} {...userData} />
-        <Base22Diagram birthday={birthday} />
-      </main>
-    </>
+        </NameModal>
+      </section>
+    </main>
   )
 }
 

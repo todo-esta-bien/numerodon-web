@@ -1,4 +1,5 @@
 import { PythagoreanPinnacle as PythagoreanNumPinnacle } from '@todo-esta-bien/numerodon'
+import DashboardCard from 'src/components/DashboardCard'
 
 interface IPythagoreanPinnacle {
   birthday: Date
@@ -117,8 +118,10 @@ const PythagoreanPinnacle = ({ birthday }: IPythagoreanPinnacle) => {
     })
 
   return (
+  <DashboardCard>
     <div className="prose">
-      <h2>Pináculo</h2>
+      <h2>Tabla Pináculo Pitagórico</h2>
+      <div className='overflow-x-auto'>
       <table className="table-zebra table-compact table table-auto">
         <thead>
           <tr>
@@ -135,7 +138,10 @@ const PythagoreanPinnacle = ({ birthday }: IPythagoreanPinnacle) => {
           ))}
         </tbody>
       </table>
+
+      </div>
     </div>
+  </DashboardCard>
   )
 }
 
