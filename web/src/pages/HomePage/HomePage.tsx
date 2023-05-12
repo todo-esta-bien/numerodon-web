@@ -9,6 +9,7 @@ import MainNavbar from 'src/components/MainNavbar/MainNavbar'
 import LifeStagesTable from 'src/components/LifeStagesTable/LifeStagesTable'
 import DateModal from 'src/components/DateModal/DateModal'
 import NameModal from 'src/components/NameModal/NameModal'
+import './HomePage.css'
 
 type UserData = {
   firstNames: string | null
@@ -78,23 +79,24 @@ const HomePage = () => {
   const fullName: string = `${userData.firstNames} ${userData.fatherLastNames} ${userData.motherLastNames}`
 
   return (
-    <>
+    <main className='bg-base-300 flex justify-center'>
       <MetaTags title={fullName} description="Home page" />
 
-      <main className='bg-base-300 p-6'>
-        <header className="prose">
+      <section className='p-6 max-w-8xl'>
+        <header className="prose mb-4">
           <h1>Hola 👋!</h1>
         </header>
         <MainNavbar birthday={birthday} fullName={fullName} />
-        <section className="flex flex-col md:flex-row md:flex-wrap">
+
+        <section className="gap-4 mt-4 flex flex-col dashboard lg:grid">
+          <div className='dashA'><TantricProfile birthday={birthday} /></div>
+          <div className='dashB'><Base22Diagram birthday={birthday} /></div>
+          <div className='dashC'><PythagoreanProfile birthday={birthday} {...userData} /></div>
+          <div className='dashD'><LifeStagesTable birthday={birthday} /></div>
+          <div className='dashE'><PythagoreanPinnacle birthday={birthday} /></div>
+          <div className='dashF'><EvolutiveProfile birthday={birthday} {...userData} /></div>
         </section>
 
-        <TantricProfile birthday={birthday} />
-        <PythagoreanProfile birthday={birthday} {...userData} />
-        <PythagoreanPinnacle birthday={birthday} />
-        <LifeStagesTable birthday={birthday} />
-        <EvolutiveProfile birthday={birthday} {...userData} />
-        <Base22Diagram birthday={birthday} />
         <DateModal>
           <div className="form-control my-1 md:mx-1">
             <label className="block md:input-group">
@@ -134,8 +136,8 @@ const HomePage = () => {
             </div>
           ))}
         </NameModal>
-      </main>
-    </>
+      </section>
+    </main>
   )
 }
 

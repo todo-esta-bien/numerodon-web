@@ -1,0 +1,32 @@
+@media (min-width: 1024px) {
+  .dashboard {
+    grid-template-areas:
+      'dashD dashC dashE'
+      'dashF dashF dashE'
+      'dashA dashB dashB';
+  }
+
+  .dashA {
+    grid-area: dashA;
+  }
+
+  .dashB {
+    grid-area: dashB;
+  }
+
+  .dashC {
+    grid-area: dashC;
+  }
+
+  .dashD {
+    grid-area: dashD;
+  }
+
+  .dashE {
+    grid-area: dashE;
+  }
+
+  .dashF {
+    grid-area: dashF;
+  }
+}
