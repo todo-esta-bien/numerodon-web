@@ -16,6 +16,7 @@ const LifeStagesTable = ({ birthday }: ILifeStagesTable) => {
     <DashboardCard>
       <div className="prose">
         <h2>Tabla Etapas de Vida y Realización</h2>
+        <div className='overflow-x-auto'>
         <table className="table-zebra table-compact table table-auto">
           <thead>
             <tr>
@@ -76,6 +77,7 @@ const LifeStagesTable = ({ birthday }: ILifeStagesTable) => {
             </tr>
           </tbody>
         </table>
+        </div>
       </div>
     </DashboardCard>
   )

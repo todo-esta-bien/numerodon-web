@@ -60,7 +60,7 @@ const EvolutiveProfile = ({ birthday, firstNames, fatherLastNames, motherLastNam
             +
           </button>
         </div>
-        <div className="w-full overflow-x-scroll">
+        <div className="w-full overflow-x-auto">
           <table className="table-zebra table-compact m-0 table table-auto border-collapse">
             <thead>
               <tr>
