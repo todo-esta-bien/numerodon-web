@@ -79,10 +79,10 @@ const HomePage = () => {
   const fullName: string = `${userData.firstNames} ${userData.fatherLastNames} ${userData.motherLastNames}`
 
   return (
-    <main className='bg-base-300 flex w-screen justify-center'>
+    <main className='animated-bg bg-base-300 flex w-screen justify-center'>
       <MetaTags title={fullName} description="Home page" />
 
-      <section className='p-6 w-full max-w-7xl'>
+      <section className='animated-bg-filter p-6 w-full max-w-7xl'>
         <header className="prose mb-4">
           <h1>Hola 👋!</h1>
         </header>
