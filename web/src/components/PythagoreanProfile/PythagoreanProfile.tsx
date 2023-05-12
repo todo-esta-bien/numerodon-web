@@ -62,6 +62,7 @@ const PythagoreanProfile = ({
   <DashboardCard>
     <div className="prose">
       <h2>Tabla Pitagórica</h2>
+      <div className='overflow-x-auto'>
       <table className="table-zebra table-compact table table-auto">
         <thead>
           <tr>
@@ -78,6 +79,8 @@ const PythagoreanProfile = ({
           ))}
         </tbody>
       </table>
+
+      </div>
     </div>
 
   </DashboardCard>

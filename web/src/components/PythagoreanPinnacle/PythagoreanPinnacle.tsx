@@ -121,6 +121,7 @@ const PythagoreanPinnacle = ({ birthday }: IPythagoreanPinnacle) => {
   <DashboardCard>
     <div className="prose">
       <h2>Tabla Pináculo Pitagórico</h2>
+      <div className='overflow-x-auto'>
       <table className="table-zebra table-compact table table-auto">
         <thead>
           <tr>
@@ -137,6 +138,8 @@ const PythagoreanPinnacle = ({ birthday }: IPythagoreanPinnacle) => {
           ))}
         </tbody>
       </table>
+
+      </div>
     </div>
   </DashboardCard>
   )
