@@ -475,7 +475,7 @@ const Base22Diagram = ({ birthday }: IBase22Diagram) => {
             {displayReducedNumber(Math.abs(22 - base22Profile.reducedMonth))}
           </text>
 
-          <text className="st11 st12 st13" transform="translate(94.2 412.81)">
+          <text data-testid="reduced-day" className="st11 st12 st13" transform="translate(94.2 412.81)">
             {displayReducedNumber(base22Profile.reducedDay)}
           </text>
           <text className="st11 st12 st13 st10" transform="translate(76 400)">
@@ -485,7 +485,7 @@ const Base22Diagram = ({ birthday }: IBase22Diagram) => {
             {displayReducedNumber(Math.abs(22 - base22Profile.reducedDay))}
           </text>
 
-          <text className="st11 st12 st13" transform="translate(25.52 412.81)">
+          <text data-testid="resistance-number" className="st11 st12 st13" transform="translate(25.52 412.81)">
             {displayReducedNumber(base22Profile.resistanceNumber)}
           </text>
           <text className="st11 st12 st13 st10" transform="translate(11 400)">
@@ -495,7 +495,7 @@ const Base22Diagram = ({ birthday }: IBase22Diagram) => {
             {displayReducedNumber(Math.abs(22 - base22Profile.resistanceNumber))}
           </text>
 
-          <text className="st11 st12 st13" transform="translate(179.29 488.2)">
+          <text data-testid="pain-knot" className="st11 st12 st13" transform="translate(179.29 488.2)">
             {displayReducedNumber(base22Profile.painKnot)}
           </text>
           <text className="st11 st12 st13 st10" transform="translate(160 462)">
@@ -505,7 +505,7 @@ const Base22Diagram = ({ birthday }: IBase22Diagram) => {
             {displayReducedNumber(Math.abs(22 - base22Profile.painKnot))}
           </text>
 
-          <text className="st11 st12 st13" transform="translate(253 538.1)">
+          <text data-testid="external-defense-behavior" className="st11 st12 st13" transform="translate(253 538.1)">
             {displayReducedNumber(base22Profile.externalDefenseBehavior)}
           </text>
           <text className="st11 st12 st13 st10" transform="translate(242 525)">
