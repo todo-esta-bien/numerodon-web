@@ -17,7 +17,7 @@
     "@redwoodjs/forms": "5.1.4",
     "@redwoodjs/router": "5.1.4",
     "@redwoodjs/web": "5.1.4",
-    "@todo-esta-bien/numerodon": "^0.24.0",
+    "@todo-esta-bien/numerodon": "^0.26.0",
     "daisyui": "^2.50.0",
     "prop-types": "15.8.1",
     "react": "18.2.0",

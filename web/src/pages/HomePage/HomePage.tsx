@@ -9,6 +9,8 @@ import MainNavbar from 'src/components/MainNavbar/MainNavbar'
 import LifeStagesTable from 'src/components/LifeStagesTable/LifeStagesTable'
 import DateModal from 'src/components/DateModal/DateModal'
 import NameModal from 'src/components/NameModal/NameModal'
+import DestinyTable from 'src/components/DestinyTable/DestinyTable'
+
 import './HomePage.css'
 
 type UserData = {
@@ -77,10 +79,11 @@ const HomePage = () => {
   ]
 
   const fullName: string = `${userData.firstNames} ${userData.fatherLastNames} ${userData.motherLastNames}`
+  const pageTitle: string = `${fullName} - ${birthday.toISOString().split('T')[0]}`
 
   return (
     <main className='animated-bg bg-base-300 flex w-screen justify-center'>
-      <MetaTags title={fullName} description="Home page" />
+      <MetaTags title={pageTitle} description="Home page" />
 
       <section className='animated-bg-filter p-6 w-full max-w-7xl'>
         <header className="prose mb-4">
@@ -95,6 +98,7 @@ const HomePage = () => {
           <div className='dashD w-full flex justify-center self-start'><LifeStagesTable birthday={birthday} /></div>
           <div className='dashE w-full flex justify-center self-start'><PythagoreanPinnacle birthday={birthday} /></div>
           <div className='dashF w-full flex justify-center self-start'><EvolutiveProfile birthday={birthday} {...userData} /></div>
+          <div className='dashG w-full flex justify-center self-start'><DestinyTable birthday={birthday} {...userData} /></div>
         </section>
 
         <DateModal>
