@@ -19,7 +19,7 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
     names: firstNames,
     fatherLastNames: fatherLastNames,
     motherLastNames: motherLastNames,
-    yearExpansionLimit: TABLE_WIDTH * SECTION_NUMBER, // so we can have 3 sections
+    yearExpansionLimit: TABLE_WIDTH * SECTION_NUMBER,
   })
 
   const rows = [
@@ -108,7 +108,7 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
           <table className="table-compact table">
             <thead>
               <tr>
-                <th>De {sectionNumber * TABLE_WIDTH} a {sectionNumber * TABLE_WIDTH + TABLE_WIDTH - 1}</th>
+                <th>De {sectionNumber * TABLE_WIDTH} a {sectionNumber * TABLE_WIDTH + TABLE_WIDTH - 1} años</th>
                 {Array.from({ length: TABLE_WIDTH }, (_) => 0).map((_, index) => (
                   <th key={index}></th>
                 ))}

@@ -46,7 +46,8 @@ body {
     grid-template-areas:
       'dashD dashC dashE'
       'dashF dashF dashE'
-      'dashA dashB dashB';
+      'dashA dashB dashB'
+      'dashG dashG dashG';
   }
 
   .dashA {
@@ -71,5 +72,9 @@ body {
 
   .dashF {
     grid-area: dashF;
+  }
+
+  .dashG {
+    grid-area: dashG;
   }
 }

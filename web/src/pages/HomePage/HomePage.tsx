@@ -9,6 +9,8 @@ import MainNavbar from 'src/components/MainNavbar/MainNavbar'
 import LifeStagesTable from 'src/components/LifeStagesTable/LifeStagesTable'
 import DateModal from 'src/components/DateModal/DateModal'
 import NameModal from 'src/components/NameModal/NameModal'
+import DestinyTable from 'src/components/DestinyTable/DestinyTable'
+
 import './HomePage.css'
 
 type UserData = {
@@ -95,6 +97,7 @@ const HomePage = () => {
           <div className='dashD w-full flex justify-center self-start'><LifeStagesTable birthday={birthday} /></div>
           <div className='dashE w-full flex justify-center self-start'><PythagoreanPinnacle birthday={birthday} /></div>
           <div className='dashF w-full flex justify-center self-start'><EvolutiveProfile birthday={birthday} {...userData} /></div>
+          <div className='dashG w-full flex justify-center self-start'><DestinyTable birthday={birthday} {...userData} /></div>
         </section>
 
         <DateModal>
