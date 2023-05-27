@@ -12,6 +12,8 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
   const TABLE_WIDTH = 34
   const SECTION_NUMBER = 3
 
+  if(firstNames === '' || fatherLastNames === '' || motherLastNames === '') return null
+
   const destinyTable = new DestinyTableProfile({
     day: birthday.getUTCDate(),
     month: birthday.getUTCMonth() + 1,
@@ -104,6 +106,39 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
     <DashboardCard>
       <h2>Tabla del Destino</h2>
       <div className="overflow-x-auto">
+        <table className="table-compact table">
+          <thead>
+            <tr><td>Num Letras</td><td></td><td></td><td></td></tr>
+            <tr>
+              <td>
+              {firstNames}
+              </td>
+              <td>
+              {fatherLastNames}
+              </td>
+              <td>
+              {motherLastNames}
+              </td>
+              <td>Total:</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                {firstNames.replace(/\s/g, '').length}
+              </td>
+              <td>
+                {motherLastNames.replace(/\s/g, '').length}
+              </td>
+              <td>
+                {fatherLastNames.replace(/\s/g, '').length}
+              </td>
+              <td>
+                {firstNames.replace(/\s/g, '').length + motherLastNames.replace(/\s/g, '').length + fatherLastNames.replace(/\s/g, '').length}
+              </td>
+            </tr>
+          </tbody>
+        </table>
         {Array.from({ length: SECTION_NUMBER }, (_, idx) => idx).map(sectionNumber => (
           <table className="table-compact table">
             <thead>
