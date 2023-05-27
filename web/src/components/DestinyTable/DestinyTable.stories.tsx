@@ -16,6 +16,7 @@ import type { ComponentMeta } from '@storybook/react'
 import DestinyTable from './DestinyTable'
 
 export const generated: ComponentStory<typeof DestinyTable> = (args) => {
+  args.birthday = new Date(args.birthday)
   return <DestinyTable {...args} />
 }
 

@@ -10,6 +10,7 @@ interface IDestinyTable {
 
 const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }: IDestinyTable) => {
   const TABLE_WIDTH = 34
+  const SECTION_NUMBER = 3
 
   const destinyTable = new DestinyTableProfile({
     day: birthday.getUTCDate(),
@@ -18,7 +19,7 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
     names: firstNames,
     fatherLastNames: fatherLastNames,
     motherLastNames: motherLastNames,
-    yearExpansionLimit: TABLE_WIDTH * 3, // so we can have 3 sections
+    yearExpansionLimit: TABLE_WIDTH * SECTION_NUMBER, // so we can have 3 sections
   })
 
   const rows = [
@@ -103,28 +104,30 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
     <DashboardCard>
       <h2>Tabla del Destino</h2>
       <div className="overflow-x-auto">
-        <table className="table-compact table">
-          <thead>
-            <tr>
-              <th></th>
-              {Array.from({ length: TABLE_WIDTH }, (_) => 0).map((_, index) => (
-                <th key={index}></th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row, rowIdx) => (
-              <tr key={rowIdx}>
-                <td className={`text-right ${row.extraClasses}`}>{row.rowName}</td>
-                {destinyTable[row.destinyTableKey].slice(0, TABLE_WIDTH).map((value, index) => (
-                  <td className={`border border-slate-700 ${row.extraClasses}`} key={index}>
-                    {value}
-                  </td>
+        {Array.from({ length: SECTION_NUMBER }, (_, idx) => idx).map(sectionNumber => (
+          <table className="table-compact table">
+            <thead>
+              <tr>
+                <th>De {sectionNumber * TABLE_WIDTH} a {sectionNumber * TABLE_WIDTH + TABLE_WIDTH - 1}</th>
+                {Array.from({ length: TABLE_WIDTH }, (_) => 0).map((_, index) => (
+                  <th key={index}></th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {rows.map((row, rowIdx) => (
+                <tr key={rowIdx}>
+                  <td className={`text-right ${row.extraClasses}`}>{row.rowName}</td>
+                  {destinyTable[row.destinyTableKey].slice(sectionNumber * TABLE_WIDTH, sectionNumber * TABLE_WIDTH + TABLE_WIDTH).map((value, index) => (
+                    <td className={`border border-slate-700 ${row.extraClasses}`} key={index}>
+                      {value}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ))}
       </div>
     </DashboardCard>
   )
