@@ -7,7 +7,6 @@ interface IBase22Diagram {
 }
 
 const Base22Diagram = ({ birthday }: IBase22Diagram) => {
-
   const base22Profile = new Base22Profile({
     day: birthday.getUTCDate(),
     month: birthday.getUTCMonth() + 1,
@@ -15,13 +14,18 @@ const Base22Diagram = ({ birthday }: IBase22Diagram) => {
   })
 
   const displayReducedNumber = (reducedNumber: number): string => {
-    const numberReducer = reduceNumberDigits({ sumRecursively: true, stopNumbers: [10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22] })
-    return reducedNumber > 22 ? `${reducedNumber}/${numberReducer(reducedNumber)}` : `${reducedNumber}`;
+    const numberReducer = reduceNumberDigits({
+      sumRecursively: true,
+      stopNumbers: [10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
+    })
+    return reducedNumber > 22 ? `${reducedNumber}/${numberReducer(reducedNumber)}` : `${reducedNumber}`
   }
 
   return (
     <DashboardCard>
-      <h2>Diagrama Base 22</h2>
+      <span className="prose">
+        <h2>Diagrama Base 22</h2>
+      </span>
       <div className="">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 428 628">
           <polyline points="186.8,405.1 393.2,366 341.4,405.7" className="st0" />
