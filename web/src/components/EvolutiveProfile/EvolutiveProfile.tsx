@@ -47,7 +47,7 @@ const EvolutiveProfile = ({ birthday, firstNames, fatherLastNames, motherLastNam
 
   return (
     <DashboardCard>
-      <div className="prose">
+      <div>
         <h2>Ciclos de Vida - Tabla Evolutiva</h2>
         <div className="flex justify-end">
           <button
@@ -60,7 +60,7 @@ const EvolutiveProfile = ({ birthday, firstNames, fatherLastNames, motherLastNam
             +
           </button>
         </div>
-        <div className="w-full overflow-x-auto">
+        <div className="overflow-x-auto">
           <table className="table-zebra table-compact m-0 table table-auto border-collapse">
             <thead>
               <tr>
