@@ -9,8 +9,8 @@ interface IDestinyTable {
 }
 
 const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }: IDestinyTable) => {
-  const TABLE_WIDTH = 34
-  const SECTION_NUMBER = 3
+  const TABLE_WIDTH = 23
+  const SECTION_NUMBER = 5
 
   if (firstNames === '' || fatherLastNames === '' || motherLastNames === '') return null
 
