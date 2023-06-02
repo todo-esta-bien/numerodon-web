@@ -9,10 +9,10 @@ interface IDestinyTable {
 }
 
 const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }: IDestinyTable) => {
-  const TABLE_WIDTH = 34
-  const SECTION_NUMBER = 3
+  const TABLE_WIDTH = 23
+  const SECTION_NUMBER = 5
 
-  if(firstNames === '' || fatherLastNames === '' || motherLastNames === '') return null
+  if (firstNames === '' || fatherLastNames === '' || motherLastNames === '') return null
 
   const destinyTable = new DestinyTableProfile({
     day: birthday.getUTCDate(),
@@ -102,48 +102,51 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
     },
   ]
 
+  const highlightCrisisPeriod = (index: number) => {
+    return destinyTable.expandedCrisisPeriods.includes(index) ? '!bg-red-100' : ''
+  }
+
   return (
     <DashboardCard>
-      <h2>Tabla del Destino</h2>
+      <span className="prose">
+        <h2>Tabla del Destino</h2>
+      </span>
       <div className="overflow-x-auto">
-        <table className="table-compact table">
+        <table className="table-compact mb-6 table">
           <thead>
-            <tr><td>Num Letras</td><td></td><td></td><td></td></tr>
             <tr>
-              <td>
-              {firstNames}
-              </td>
-              <td>
-              {fatherLastNames}
-              </td>
-              <td>
-              {motherLastNames}
-              </td>
+              <td>Num Letras</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>{firstNames}</td>
+              <td>{fatherLastNames}</td>
+              <td>{motherLastNames}</td>
               <td>Total:</td>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td>{firstNames.replace(/\s/g, '').length}</td>
+              <td>{motherLastNames.replace(/\s/g, '').length}</td>
+              <td>{fatherLastNames.replace(/\s/g, '').length}</td>
               <td>
-                {firstNames.replace(/\s/g, '').length}
-              </td>
-              <td>
-                {motherLastNames.replace(/\s/g, '').length}
-              </td>
-              <td>
-                {fatherLastNames.replace(/\s/g, '').length}
-              </td>
-              <td>
-                {firstNames.replace(/\s/g, '').length + motherLastNames.replace(/\s/g, '').length + fatherLastNames.replace(/\s/g, '').length}
+                {firstNames.replace(/\s/g, '').length +
+                  motherLastNames.replace(/\s/g, '').length +
+                  fatherLastNames.replace(/\s/g, '').length}
               </td>
             </tr>
           </tbody>
         </table>
-        {Array.from({ length: SECTION_NUMBER }, (_, idx) => idx).map(sectionNumber => (
-          <table className="table-compact table">
+        {Array.from({ length: SECTION_NUMBER }, (_, idx) => idx).map((sectionNumber) => (
+          <table className="table-compact my-3 table shadow">
             <thead>
               <tr>
-                <th>De {sectionNumber * TABLE_WIDTH} a {sectionNumber * TABLE_WIDTH + TABLE_WIDTH - 1} años</th>
+                <th>
+                  De {sectionNumber * TABLE_WIDTH} a {sectionNumber * TABLE_WIDTH + TABLE_WIDTH - 1} años
+                </th>
                 {Array.from({ length: TABLE_WIDTH }, (_) => 0).map((_, index) => (
                   <th key={index}></th>
                 ))}
@@ -153,11 +156,18 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
               {rows.map((row, rowIdx) => (
                 <tr key={rowIdx}>
                   <td className={`text-right ${row.extraClasses}`}>{row.rowName}</td>
-                  {destinyTable[row.destinyTableKey].slice(sectionNumber * TABLE_WIDTH, sectionNumber * TABLE_WIDTH + TABLE_WIDTH).map((value, index) => (
-                    <td className={`border border-slate-700 ${row.extraClasses}`} key={index}>
-                      {value}
-                    </td>
-                  ))}
+                  {destinyTable[row.destinyTableKey]
+                    .slice(sectionNumber * TABLE_WIDTH, sectionNumber * TABLE_WIDTH + TABLE_WIDTH)
+                    .map((value: string | number, index: number) => (
+                      <td
+                        className={`border border-slate-700 ${row.extraClasses} ${highlightCrisisPeriod(
+                          sectionNumber * TABLE_WIDTH + index
+                        )}`}
+                        key={index}
+                      >
+                        {value}
+                      </td>
+                    ))}
                 </tr>
               ))}
             </tbody>

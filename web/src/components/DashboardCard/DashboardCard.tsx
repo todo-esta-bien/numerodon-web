@@ -6,7 +6,7 @@ interface IDashboardCardProps {
 
 const DashboardCard = ({children}: IDashboardCardProps) => {
   return (
-    <div className="bg-base-100 shadow rounded-2xl flex flex-col prose p-4 w-full">
+    <div className="bg-base-100 shadow rounded-2xl p-4 w-full">
       {children}
     </div>
   )

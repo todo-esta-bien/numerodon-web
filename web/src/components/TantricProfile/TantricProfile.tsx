@@ -14,7 +14,9 @@ const TantricProfile = ({ birthday }: ITantricProfile) => {
 
   return (
     <DashboardCard>
-      <h2>Esquema Tántrico</h2>
+      <span className="prose">
+        <h2>Esquema Tántrico</h2>
+      </span>
       <div className="flex justify-center divide-x-4 divide-sky-500 text-3xl md:justify-center">
         <div className="grid grid-cols-2 grid-rows-2 gap-2 p-4">
           <span>{tantricProfile.soul}</span>
