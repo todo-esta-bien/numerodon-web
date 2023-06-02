@@ -140,8 +140,8 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
             </tr>
           </tbody>
         </table>
-        {Array.from({ length: SECTION_NUMBER }, (_, idx) => idx).map((sectionNumber) => (
-          <table className="table-compact my-3 table shadow">
+        {Array.from({ length: SECTION_NUMBER }, (_, idx) => idx).map((sectionNumber, keyIdx) => (
+          <table key={keyIdx} className="table-compact my-3 table shadow">
             <thead>
               <tr>
                 <th>
@@ -152,7 +152,7 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
                 ))}
               </tr>
             </thead>
-            <tbody>
+            <tbody key={keyIdx}>
               {rows.map((row, rowIdx) => (
                 <tr key={rowIdx}>
                   <td className={`text-right ${row.extraClasses}`}>{row.rowName}</td>

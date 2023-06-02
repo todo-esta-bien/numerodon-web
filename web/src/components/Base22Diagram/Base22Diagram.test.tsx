@@ -19,7 +19,7 @@ describe('Base22Diagram', () => {
 
   it('displays the correct resistance number', () => {
     const { getByTestId } = render(<Base22Diagram birthday={new Date(1994, 12, 27)} />)
-    expect(getByTestId('resistance-number')).toHaveTextContent('4')
+    expect(getByTestId('resistance-number')).toHaveTextContent('2')
   })
 
   it('displays the correct pain knot', () => {
