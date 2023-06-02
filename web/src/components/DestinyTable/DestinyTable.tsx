@@ -102,6 +102,10 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
     },
   ]
 
+  const highlightCrisisPeriod = (index: number) => {
+    return destinyTable.expandedCrisisPeriods.includes(index) ? '!bg-red-100' : ''
+  }
+
   return (
     <DashboardCard>
       <span className="prose">
@@ -154,8 +158,13 @@ const DestinyTable = ({ birthday, firstNames, fatherLastNames, motherLastNames }
                   <td className={`text-right ${row.extraClasses}`}>{row.rowName}</td>
                   {destinyTable[row.destinyTableKey]
                     .slice(sectionNumber * TABLE_WIDTH, sectionNumber * TABLE_WIDTH + TABLE_WIDTH)
-                    .map((value, index) => (
-                      <td className={`border border-slate-700 ${row.extraClasses}`} key={index}>
+                    .map((value: string | number, index: number) => (
+                      <td
+                        className={`border border-slate-700 ${row.extraClasses} ${highlightCrisisPeriod(
+                          sectionNumber * TABLE_WIDTH + index
+                        )}`}
+                        key={index}
+                      >
                         {value}
                       </td>
                     ))}
