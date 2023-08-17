@@ -47,6 +47,7 @@ body {
       'dashD dashC dashE'
       'dashF dashF dashE'
       'dashA dashB dashB'
+      'dashH dashB dashB'
       'dashG dashG dashG';
     grid-template-columns: 1fr 1fr 1fr;
   }

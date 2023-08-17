@@ -10,6 +10,7 @@ import LifeStagesTable from 'src/components/LifeStagesTable/LifeStagesTable'
 import DateModal from 'src/components/DateModal/DateModal'
 import NameModal from 'src/components/NameModal/NameModal'
 import DestinyTable from 'src/components/DestinyTable/DestinyTable'
+import DiamondDiagram from 'src/components/DiamondDiagram/DiamondDiagram'
 
 import './HomePage.css'
 
@@ -82,23 +83,40 @@ const HomePage = () => {
   const pageTitle: string = `${fullName} - ${birthday.toISOString().split('T')[0]}`
 
   return (
-    <main className='animated-bg bg-base-300 flex w-screen justify-center'>
+    <main className="animated-bg flex w-screen justify-center bg-base-300">
       <MetaTags title={pageTitle} description="Home page" />
 
-      <section className='animated-bg-filter p-6 w-full max-w-7xl'>
+      <section className="animated-bg-filter w-full max-w-7xl p-6">
         <header className="prose mb-4">
           <h1>Hola 👋!</h1>
         </header>
         <MainNavbar birthday={birthday} fullName={fullName} />
 
-        <section className="gap-4 mt-4 flex flex-col dashboard w-full lg:grid">
-          <div className='dashA w-full flex justify-center self-start'><TantricProfile birthday={birthday} /></div>
-          <div className='dashB w-full flex justify-center self-start'><Base22Diagram birthday={birthday} /></div>
-          <div className='dashC w-full flex justify-center self-start'><PythagoreanProfile birthday={birthday} {...userData} /></div>
-          <div className='dashD w-full flex justify-center self-start'><LifeStagesTable birthday={birthday} /></div>
-          <div className='dashE w-full flex justify-center self-start'><PythagoreanPinnacle birthday={birthday} /></div>
-          <div className='dashF w-full flex justify-center self-start'><EvolutiveProfile birthday={birthday} {...userData} /></div>
-          <div className='dashG w-full flex justify-center self-start'><DestinyTable birthday={birthday} {...userData} /></div>
+        <section className="dashboard mt-4 flex w-full flex-col gap-4 lg:grid">
+          <div className="dashA flex w-full justify-center self-start">
+            <TantricProfile birthday={birthday} />
+          </div>
+          <div className="dashB flex w-full justify-center self-start">
+            <Base22Diagram birthday={birthday} />
+          </div>
+          <div className="dashC flex w-full justify-center self-start">
+            <PythagoreanProfile birthday={birthday} {...userData} />
+          </div>
+          <div className="dashD flex w-full justify-center self-start">
+            <LifeStagesTable birthday={birthday} />
+          </div>
+          <div className="dashE flex w-full justify-center self-start">
+            <PythagoreanPinnacle birthday={birthday} />
+          </div>
+          <div className="dashF flex w-full justify-center self-start">
+            <EvolutiveProfile birthday={birthday} {...userData} />
+          </div>
+          <div className="dashH flex w-full justify-center self-start">
+            <DiamondDiagram birthday={birthday} />
+          </div>
+          <div className="dashG flex w-full justify-center self-start">
+            <DestinyTable birthday={birthday} {...userData} />
+          </div>
         </section>
 
         <DateModal>

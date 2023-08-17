@@ -1,0 +1,21 @@
+.diamond-st0 {
+  fill: #020203;
+}
+.diamond-st1 {
+  fill: #ffffff;
+}
+.diamond-st2 {
+  font-family: 'MyriadPro-Regular';
+}
+.diamond-st3 {
+  font-size: 22px;
+}
+.diamond-st4 {
+  fill: none;
+  stroke: #020203;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+.diamond-st5 {
+  font-size: 20.2125px;
+}
