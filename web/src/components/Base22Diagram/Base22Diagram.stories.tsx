@@ -2,7 +2,7 @@
 // pass Storybook's `args` through this story to control it from the addons panel:
 //
 // ```tsx
-import type { ComponentStory } from '@storybook/react'
+import type { StoryObj, StoryFn } from '@storybook/react'
 //
 // export const generated: ComponentStory<typeof Base22Diagram> = (args) => {
 //   return <Base22Diagram {...args} />
@@ -11,13 +11,15 @@ import type { ComponentStory } from '@storybook/react'
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import type { ComponentMeta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 
 import Base22Diagram from './Base22Diagram'
 
-export const generated: ComponentStory<typeof Base22Diagram> = (args) => {
-  args.birthday = new Date(args.birthday)
-  return <Base22Diagram {...args}/>
+export const generated: StoryObj<typeof Base22Diagram> = {
+  render: (args) => {
+    args.birthday = new Date(args.birthday)
+    return <Base22Diagram {...args} />
+  },
 }
 
 export default {
@@ -31,4 +33,4 @@ export default {
       control: 'date',
     },
   },
-} as ComponentMeta<typeof Base22Diagram>
+} as Meta<typeof Base22Diagram>

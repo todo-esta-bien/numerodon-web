@@ -2,7 +2,7 @@
 // pass Storybook's `args` through this story to control it from the addons panel:
 //
 // ```tsx
-import type { ComponentStory } from '@storybook/react'
+import type { StoryObj, StoryFn } from '@storybook/react'
 //
 // export const generated: ComponentStory<typeof MainNavbar> = (args) => {
 //   return <MainNavbar {...args} />
@@ -11,12 +11,14 @@ import type { ComponentStory } from '@storybook/react'
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import type { ComponentMeta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 
 import MainNavbar from './MainNavbar'
 
-export const generated: ComponentStory<typeof MainNavbar> = (args) => {
-  return <MainNavbar {...args} />
+export const generated: StoryObj<typeof MainNavbar> = {
+  render: (args) => {
+    return <MainNavbar {...args} />
+  },
 }
 
 export default {
@@ -24,7 +26,7 @@ export default {
   component: MainNavbar,
   args: {
     birthday: new Date(1994, 11, 27),
-    fullName: 'Rodrigo Medina'
+    fullName: 'Rodrigo Medina',
   },
   argTypes: {
     birthday: {
@@ -32,6 +34,6 @@ export default {
     },
     fullName: {
       control: 'text',
-    }
+    },
   },
-} as ComponentMeta<typeof MainNavbar>
+} as Meta<typeof MainNavbar>

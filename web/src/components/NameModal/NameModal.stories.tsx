@@ -2,7 +2,7 @@
 // pass Storybook's `args` through this story to control it from the addons panel:
 //
 // ```tsx
-import type { ComponentStory } from '@storybook/react'
+import type { StoryObj, StoryFn } from '@storybook/react'
 //
 // export const generated: ComponentStory<typeof NameModal> = (args) => {
 //   return <NameModal {...args} />
@@ -11,12 +11,14 @@ import type { ComponentStory } from '@storybook/react'
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import type { ComponentMeta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 
 import NameModal from './NameModal'
 
-export const generated: ComponentStory<typeof NameModal> = (args) => {
-  return <NameModal {...args}/>
+export const generated: StoryObj<typeof NameModal> = {
+  render: (args) => {
+    return <NameModal {...args} />
+  },
 }
 
 export default {
@@ -27,4 +29,4 @@ export default {
     fatherLastNames: 'Ray',
     motherLastNames: 'Cyrus',
   },
-} as ComponentMeta<typeof NameModal>
+} as Meta<typeof NameModal>
