@@ -2,7 +2,7 @@
 // pass Storybook's `args` through this story to control it from the addons panel:
 //
 // ```tsx
-import type { ComponentStory } from '@storybook/react'
+import type { StoryObj, StoryFn } from '@storybook/react'
 //
 // export const generated: ComponentStory<typeof DestinyTable> = (args) => {
 //   return <DestinyTable {...args} />
@@ -11,13 +11,15 @@ import type { ComponentStory } from '@storybook/react'
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import type { ComponentMeta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 
 import DestinyTable from './DestinyTable'
 
-export const generated: ComponentStory<typeof DestinyTable> = (args) => {
-  args.birthday = new Date(args.birthday)
-  return <DestinyTable {...args} />
+export const generated: StoryObj<typeof DestinyTable> = {
+  render: (args) => {
+    args.birthday = new Date(args.birthday)
+    return <DestinyTable {...args} />
+  },
 }
 
 export default {
@@ -33,5 +35,5 @@ export default {
     birthday: {
       control: 'date',
     },
-  }
-} as ComponentMeta<typeof DestinyTable>
+  },
+} as Meta<typeof DestinyTable>

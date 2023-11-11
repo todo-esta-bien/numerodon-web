@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
-    "@redwoodjs/forms": "5.1.4",
-    "@redwoodjs/router": "5.1.4",
-    "@redwoodjs/web": "5.1.4",
+    "@redwoodjs/forms": "6.3.3",
+    "@redwoodjs/router": "6.3.3",
+    "@redwoodjs/web": "6.3.3",
     "@todo-esta-bien/numerodon": "^0.31.0",
     "daisyui": "^2.50.0",
     "prop-types": "15.8.1",
@@ -24,6 +24,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@redwoodjs/vite": "6.3.3",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",

@@ -2,7 +2,7 @@
 // pass Storybook's `args` through this story to control it from the addons panel:
 //
 // ```tsx
-import type { ComponentStory } from '@storybook/react'
+import type { StoryObj, StoryFn } from '@storybook/react'
 //
 // export const generated: ComponentStory<typeof PythagoreanProfile> = (args) => {
 //   return <PythagoreanProfile {...args} />
@@ -11,12 +11,14 @@ import type { ComponentStory } from '@storybook/react'
 //
 // See https://storybook.js.org/docs/react/writing-stories/args.
 
-import type { ComponentMeta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 
 import PythagoreanProfile from './PythagoreanProfile'
 
-export const generated: ComponentStory<typeof PythagoreanProfile> = (args) => {
-  return <PythagoreanProfile {...args} />
+export const generated: StoryObj<typeof PythagoreanProfile> = {
+  render: (args) => {
+    return <PythagoreanProfile {...args} />
+  },
 }
 
 export default {
@@ -33,4 +35,4 @@ export default {
       control: 'date',
     },
   },
-} as ComponentMeta<typeof PythagoreanProfile>
+} as Meta<typeof PythagoreanProfile>
