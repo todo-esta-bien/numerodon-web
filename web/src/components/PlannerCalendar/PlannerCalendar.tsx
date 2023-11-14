@@ -131,10 +131,7 @@ const PlannerCalendar = ({ name, birthday, consultingMonth, consultingYear }: Pl
         </text>
         <line className="st10" x1="442.99" y1="124.12" x2="578.48" y2="124.12" />
         <text transform="matrix(1 0 0 1 112.6245 119.844)">
-          <tspan x="0" y="0" className="st5 st3 st11">
-            {' '}
-          </tspan>
-          <tspan x="6.6" y="0" className="st5 st3 st12">
+          <tspan x="44.6" y="0" className="st5 st3 st12">
             Año Personal
           </tspan>
         </text>
