@@ -135,7 +135,7 @@ const PlannerCalendar = ({ name, birthday, consultingMonth, consultingYear }: Pl
             {' '}
           </tspan>
           <tspan x="6.6" y="0" className="st5 st3 st12">
-            Vibración Año Personal
+            Año Personal
           </tspan>
         </text>
         <text transform="matrix(1 0 0 1 425.6747 148.5978)" className="st2 st3 st7">
