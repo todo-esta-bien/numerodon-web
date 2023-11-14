@@ -85,7 +85,7 @@ const PlannerCalendar = ({ name, birthday, consultingMonth, consultingYear }: Pl
           points="384.31,161.68 232.99,161.68 242.29,152.56 232.99,143.44 384.31,143.44 377.74,153.73 "
         />
         <text transform="matrix(1 0 0 1 247.3859 156.4387)" className="st2 st0 st7">
-          vibración personal
+          Vibración Personal
         </text>
         <line className="st10" x1="442.99" y1="124.12" x2="578.48" y2="124.12" />
         <text transform="matrix(1 0 0 1 112.6245 119.844)">
@@ -93,7 +93,7 @@ const PlannerCalendar = ({ name, birthday, consultingMonth, consultingYear }: Pl
             {' '}
           </tspan>
           <tspan x="6.6" y="0" className="st5 st3 st12">
-            Vibración anual{' '}
+            Vibración Año Personal
           </tspan>
         </text>
         <text transform="matrix(1 0 0 1 425.6747 148.5978)" className="st2 st3 st7">
@@ -1692,14 +1692,8 @@ const PlannerCalendar = ({ name, birthday, consultingMonth, consultingYear }: Pl
         </text>
         <rect x="41.97" y="165.64" className="st19" width="107.84" height="41.23" />
         <text transform="matrix(1 0 0 1 41.9699 173.198)">
-          <tspan x="0" y="0" className="st0 st20">
-            mes, este texto{' '}
-          </tspan>
           <tspan x="0" y="12" className="st0 st20">
-            cambia de acuerdo{' '}
-          </tspan>
-          <tspan x="0" y="24" className="st0 st20">
-            al mes
+            {getMonthName(plannerProfile.consultingMonth)}
           </tspan>
         </text>
         <polyline className="st23" points="113.98,271.37 88.67,271.37 88.67,247.4 " />
@@ -2070,14 +2064,8 @@ const PlannerCalendar = ({ name, birthday, consultingMonth, consultingYear }: Pl
         </text>
         <rect x="213.77" y="165.94" className="st19" width="107.84" height="41.23" />
         <text transform="matrix(1 0 0 1 213.7734 173.5038)">
-          <tspan x="0" y="0" className="st0 st20">
-            mes, este texto{' '}
-          </tspan>
           <tspan x="0" y="12" className="st0 st20">
-            cambia de acuerdo{' '}
-          </tspan>
-          <tspan x="0" y="24" className="st0 st20">
-            al mes
+            {getMonthName(plannerProfile.consultingMonth)}
           </tspan>
         </text>
       </svg>

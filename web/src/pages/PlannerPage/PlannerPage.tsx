@@ -1,9 +1,10 @@
-import { MetaTags } from '@redwoodjs/web'
-import { useLayoutContext } from 'src/layouts/HomeLayout'
 import { useState } from 'react'
 
-import PlannerCalendar from 'src/components/PlannerCalendar'
+import { MetaTags } from '@redwoodjs/web'
+
 import ConsultingYearSelector from 'src/components/ConsultingYearSelector/ConsultingYearSelector'
+import PlannerCalendar from 'src/components/PlannerCalendar'
+import { useLayoutContext } from 'src/layouts/HomeLayout'
 
 const PlannerPage = () => {
   const currentYear = new Date().getFullYear()
@@ -35,7 +36,7 @@ const PlannerPage = () => {
               consultingMonth={consultingMonth}
               consultingYear={consultingYear}
             />
-            <div className="divider">Planeador Numerológico de Todo Esta Bien</div>
+            <div className="divider">Planeador Numerológico de Todo Está Bien</div>
           </div>
         ))}
       </section>
