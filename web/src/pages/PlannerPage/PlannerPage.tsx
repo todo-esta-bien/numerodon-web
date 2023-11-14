@@ -23,9 +23,9 @@ const PlannerPage = () => {
 
   return (
     <>
-      <MetaTags title={pageTitle} description="Home page" />
+      <MetaTags title={pageTitle} description="Planner page" />
 
-      <section className="mt-4 flex w-full flex-col">
+      <section className="mt-4 flex w-full flex-col bg-red-50">
         <ConsultingYearSelector consultingYear={consultingYear} setConsultingYear={setConsultingYear} />
 
         {consultingMonths.map((consultingMonth: number) => (

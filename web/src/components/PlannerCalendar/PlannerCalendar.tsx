@@ -26,6 +26,48 @@ const PlannerCalendar = ({ name, birthday, consultingMonth, consultingYear }: Pl
     }
   }
 
+  const wrapText = (text: string, maxLength: number): string => {
+    const words = text.split(' ')
+    let lines = []
+    let currentLine = ''
+
+    for (const word of words) {
+      if (currentLine.length + word.length <= maxLength) {
+        // Add the word to the current line
+        currentLine += (currentLine.length > 0 ? ' ' : '') + word
+      } else {
+        // Start a new line
+        lines.push(currentLine)
+        currentLine = word
+      }
+    }
+
+    // Push the remaining content as the last line
+    if (currentLine.length > 0) {
+      lines.push(currentLine)
+    }
+
+    return lines.join('\n')
+  }
+
+  const getWarningLabel = (personalVibration: number): string => {
+    const warnings = {
+      1: 'No más excusas, empieza ya.',
+      2: 'Vence las dudas e indecisión',
+      3: 'Cuida tu lengua, exprésate sin juicios, brilla por ti.',
+      4: 'Esfuérzate, sal de tu zona de confort.',
+      5: 'Sé flexible, cambios.',
+      6: 'Responsabilízate y libérate de crear deudas emocionales.',
+      7: 'Relájate, cuida tu salud mental.',
+      8: 'Administra tus recursos, sé cauteloso.',
+      9: 'Corta las dependencias físicas y emocionales.',
+      11: 'Cuidado con el abuso de poder, y los excesos.',
+      22: 'Cuidado, el camino corto te puede hacer caer en trampas.',
+    }
+
+    return warnings[personalVibration] || ''
+  }
+
   return (
     <>
       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 612 792">
@@ -1849,21 +1891,13 @@ const PlannerCalendar = ({ name, birthday, consultingMonth, consultingYear }: Pl
         </text>
         <rect x="426.04" y="156.63" className="st19" width="148.33" height="49.71" />
         <text transform="matrix(1 0 0 1 426.0371 164.9419)">
-          <tspan x="0" y="0" className="st0 st7">
-            Cambia de acuerdo a la{' '}
-          </tspan>
-          <tspan x="0" y="13.2" className="st0 st7">
-            vibración personal Lorem{' '}
-          </tspan>
-          <tspan x="0" y="26.4" className="st0 st7">
-            ipsum dolor sit amet, condo
-          </tspan>
-          <tspan x="135.47" y="26.4" className="st0 st7">
-            -
-          </tspan>
-          <tspan x="0" y="39.6" className="st0 st7">
-            lor sit amet, consectetuer .{' '}
-          </tspan>
+          {wrapText(getWarningLabel(plannerProfile.personalVibration), 34)
+            .split('\n')
+            .map((line: string, idx: number) => (
+              <tspan key={idx} x="0" y="13.2" className="st0 st7" dy={idx > 0 ? '1.2em' : '0'}>
+                {line}
+              </tspan>
+            ))}
         </text>
         <line className="st10" x1="38.81" y1="90.8" x2="258.13" y2="90.8" />
         <text transform="matrix(1 0 0 1 40.0163 83.3173)" className="st25 st0 st15">
