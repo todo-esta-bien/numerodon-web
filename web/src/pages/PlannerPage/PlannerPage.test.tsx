@@ -1,6 +1,6 @@
 import { render } from '@redwoodjs/testing/web'
 
-import HomePage from './HomePage'
+import PlannerPage from './PlannerPage'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //   https://redwoodjs.com/docs/testing#testing-pages-layouts
@@ -14,10 +14,10 @@ jest.spyOn(React, 'useContext').mockImplementation(() => ({
   },
 }))
 
-describe('HomePage', () => {
+describe('PlannerPage', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<HomePage />)
+      render(<PlannerPage />)
     }).not.toThrow()
   })
 })
