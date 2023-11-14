@@ -9,8 +9,13 @@ interface INameModalProps {
 }
 
 const NameModal = ({ children, firstNames, fatherLastNames, motherLastNames }: INameModalProps) => {
-
-  const isAnyNameEmpty:boolean = firstNames === '' || fatherLastNames === '' || motherLastNames === ''
+  const isAnyNameEmpty: boolean =
+    firstNames === '' ||
+    firstNames === null ||
+    fatherLastNames === '' ||
+    fatherLastNames === null ||
+    motherLastNames === '' ||
+    motherLastNames === null
 
   const [isShown, setIsShown] = useState<boolean>(isAnyNameEmpty)
 
@@ -22,16 +27,19 @@ const NameModal = ({ children, firstNames, fatherLastNames, motherLastNames }: I
         onChange={(e) => setIsShown(e.target.checked)}
         type="checkbox"
         id="name-modal"
-        className="modal-toggle" />
+        className="modal-toggle"
+      />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Ingresa tu Nombre Completo</h3>
+          <h3 className="text-lg font-bold">Ingresa tu Nombre Completo</h3>
           <p className="py-4">Debe ser el nombre que viene en tu acta</p>
           {children}
           {!isAnyNameEmpty && (
-          <div className="modal-action">
-            <label htmlFor="name-modal" className="btn">Ok</label>
-          </div>
+            <div className="modal-action">
+              <label htmlFor="name-modal" className="btn">
+                Ok
+              </label>
+            </div>
           )}
         </div>
       </div>

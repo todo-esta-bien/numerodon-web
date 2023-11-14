@@ -14,7 +14,7 @@ const PlannerCalendar = ({ name, birthday, consultingMonth, consultingYear }: Pl
     month: birthday.getUTCMonth() + 1,
     year: birthday.getUTCFullYear(),
     consultingYear,
-    consultingMonth,
+    consultingMonth: consultingMonth + 1,
   })
 
   const getMonthName = (numericMonth: number) => {
@@ -1734,109 +1734,109 @@ const PlannerCalendar = ({ name, birthday, consultingMonth, consultingYear }: Pl
         <polyline className="st23" points="191.28,578.35 165.97,578.35 165.97,554.37 " />
         <polyline className="st23" points="268.67,578.35 243.36,578.35 243.36,554.37 " />
         <text transform="matrix(0.7545 0 0 1 94.9939 264.7709)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[1]?.calendarDay}
+          {plannerProfile.plannerDays[0]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 172.6378 264.7709)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[2]?.calendarDay}
+          {plannerProfile.plannerDays[1]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 250.0255 264.7709)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[3]?.calendarDay}
+          {plannerProfile.plannerDays[2]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 326.8234 264.7709)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[4]?.calendarDay}
+          {plannerProfile.plannerDays[3]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 403.2568 264.7709)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[5]?.calendarDay}
+          {plannerProfile.plannerDays[4]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 481.0089 262.8063)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[6]?.calendarDay}
+          {plannerProfile.plannerDays[5]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 556.7036 262.8063)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[7]?.calendarDay}
+          {plannerProfile.plannerDays[6]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 94.9939 340.9974)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[8]?.calendarDay}
+          {plannerProfile.plannerDays[7]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 172.6378 340.9974)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[9]?.calendarDay}
+          {plannerProfile.plannerDays[8]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 250.0255 340.9974)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[10]?.calendarDay}
+          {plannerProfile.plannerDays[9]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 326.8234 340.9974)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[11]?.calendarDay}
+          {plannerProfile.plannerDays[10]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 403.2568 340.9974)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[12]?.calendarDay}
+          {plannerProfile.plannerDays[11]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 481.0089 339.0328)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[13]?.calendarDay}
+          {plannerProfile.plannerDays[12]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 556.7036 339.0328)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[14]?.calendarDay}
+          {plannerProfile.plannerDays[13]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 94.9939 418.6392)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[15]?.calendarDay}
+          {plannerProfile.plannerDays[14]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 172.6378 418.6392)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[16]?.calendarDay}
+          {plannerProfile.plannerDays[15]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 250.0255 418.6392)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[17]?.calendarDay}
+          {plannerProfile.plannerDays[16]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 326.8234 418.6392)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[18]?.calendarDay}
+          {plannerProfile.plannerDays[17]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 403.2568 418.6392)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[19]?.calendarDay}
+          {plannerProfile.plannerDays[18]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 481.0089 416.6747)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[20]?.calendarDay}
+          {plannerProfile.plannerDays[19]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 556.7036 416.6747)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[21]?.calendarDay}
+          {plannerProfile.plannerDays[20]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 93.6745 495.3769)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[22]?.calendarDay}
+          {plannerProfile.plannerDays[21]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 171.3184 495.3769)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[23]?.calendarDay}
+          {plannerProfile.plannerDays[22]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 248.7061 495.3769)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[24]?.calendarDay}
+          {plannerProfile.plannerDays[23]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 325.504 495.3769)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[25]?.calendarDay}
+          {plannerProfile.plannerDays[24]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 401.9374 495.3769)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[26]?.calendarDay}
+          {plannerProfile.plannerDays[25]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 479.6895 493.4124)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[27]?.calendarDay}
+          {plannerProfile.plannerDays[26]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 555.3842 493.4124)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[28]?.calendarDay}
+          {plannerProfile.plannerDays[27]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 93.9141 569.9113)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[29]?.calendarDay}
+          {plannerProfile.plannerDays[28]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 172.2931 571.7439)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[30]?.calendarDay}
+          {plannerProfile.plannerDays[29]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 249.6808 571.7439)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[31]?.calendarDay}
+          {plannerProfile.plannerDays[30]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 326.4787 571.7439)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[32]?.calendarDay}
+          {plannerProfile.plannerDays[31]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 402.912 571.7439)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[33]?.calendarDay}
+          {plannerProfile.plannerDays[32]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 480.6642 569.7793)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[34]?.calendarDay}
+          {plannerProfile.plannerDays[33]?.calendarDay}
         </text>
         <text transform="matrix(0.7545 0 0 1 556.3589 569.7793)" className="st17 st22 st7">
-          {plannerProfile.plannerDays[35]?.calendarDay}
+          {plannerProfile.plannerDays[34]?.calendarDay}
         </text>
         <polyline className="st23" points="345.47,578.35 320.16,578.35 320.16,554.37 " />
         <polyline className="st23" points="421.9,578.35 396.59,578.35 396.59,554.37 " />
