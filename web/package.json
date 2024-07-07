@@ -14,17 +14,18 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
-    "@redwoodjs/forms": "6.3.3",
-    "@redwoodjs/router": "6.3.3",
-    "@redwoodjs/web": "6.3.3",
+    "@redwoodjs/forms": "7.7.2",
+    "@redwoodjs/router": "7.7.2",
+    "@redwoodjs/web": "7.7.2",
     "@todo-esta-bien/numerodon": "^0.33.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "daisyui": "^2.50.0",
-    "prop-types": "15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@redwoodjs/vite": "6.3.3",
+    "@redwoodjs/vite": "7.7.2",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
