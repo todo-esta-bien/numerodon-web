@@ -1,6 +1,6 @@
 import { render } from '@redwoodjs/testing/web'
 
-import PlannerCalendarV2 from './PlannerCalendarV2'
+import PlannerCalendarV2 from './PlannerCalendar'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components

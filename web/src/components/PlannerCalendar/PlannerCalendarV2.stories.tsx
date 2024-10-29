@@ -12,7 +12,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import PlannerCalendarV2 from './PlannerCalendarV2'
+import PlannerCalendarV2 from './PlannerCalendar'
 
 const meta: Meta<typeof PlannerCalendarV2> = {
   component: PlannerCalendarV2,

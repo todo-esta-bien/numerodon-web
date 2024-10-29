@@ -29,7 +29,7 @@ const PlannerPage = () => {
         <ConsultingYearSelector consultingYear={consultingYear} setConsultingYear={setConsultingYear} />
 
         {consultingMonths.map((consultingMonth: number) => (
-          <div className="break-before-page break-after-page" key={consultingMonth}>
+          <div className="break-before-page break-after-page p-16" key={consultingMonth}>
             <PlannerCalendar
               birthday={birthday}
               name={fullName}

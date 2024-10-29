@@ -1,7 +1,7 @@
 export type PlannerCalendarDayProps = {
-  universalDay: String
-  personalDay: String
-  calendarDay: String
+  universalDay: number
+  personalDay: number
+  calendarDay: number
 }
 
 const PlannerCalendarDay = ({ universalDay, personalDay, calendarDay }: PlannerCalendarDayProps) => {

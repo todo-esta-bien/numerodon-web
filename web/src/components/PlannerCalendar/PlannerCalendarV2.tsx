@@ -1,7 +1,7 @@
 import PlannerCalendarDay from 'src/components/PlannerCalendarDay'
 import { PlannerProfile } from '@todo-esta-bien/numerodon'
-import PlannerSymbol from 'src/components/PlannerCalendarV2/PlannerSymbol'
-import AngelIcon from 'src/components/PlannerCalendarV2/AngelIcon'
+import PlannerSymbol from 'src/components/PlannerCalendar/PlannerSymbol'
+import AngelIcon from 'src/components/PlannerCalendar/AngelIcon'
 
 interface PlannerCalendarProps {
   name: string
