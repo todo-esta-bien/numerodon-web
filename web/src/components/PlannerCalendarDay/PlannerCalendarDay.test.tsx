@@ -8,7 +8,7 @@ import PlannerCalendarDay from './PlannerCalendarDay'
 describe('PlannerCalendarDay', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<PlannerCalendarDay />)
+      render(<PlannerCalendarDay universalDay={2} personalDay={2} calendarDay={2} selectedColor={'red'} />)
     }).not.toThrow()
   })
 })

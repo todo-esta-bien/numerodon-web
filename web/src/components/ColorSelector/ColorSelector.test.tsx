@@ -8,7 +8,7 @@ import ColorSelector from './ColorSelector'
 describe('ColorSelector', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<ColorSelector />)
+      render(<ColorSelector selectedColor={'red'} setSelectedColor={(e) => null} />)
     }).not.toThrow()
   })
 })
