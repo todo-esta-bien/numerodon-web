@@ -6,6 +6,7 @@ import ConsultingYearSelector from 'src/components/ConsultingYearSelector/Consul
 import ColorSelector from 'src/components/ColorSelector/ColorSelector'
 import PlannerCalendar from 'src/components/PlannerCalendar'
 import { useLayoutContext } from 'src/layouts/HomeLayout'
+import { BACKGROUND_COLORS } from 'src/colors'
 
 const PlannerPage = () => {
   const currentYear = new Date().getFullYear()
@@ -27,7 +28,7 @@ const PlannerPage = () => {
     <>
       <MetaTags title={pageTitle} description="Planner page" />
 
-      <section className="mt-4 flex w-full flex-col bg-red-50">
+      <section className={`mt-4 flex w-full flex-col ${BACKGROUND_COLORS[selectedColor][50]}`}>
         <div className="navbar flex-wrap justify-center rounded-2xl bg-base-100 shadow-lg">
           <ConsultingYearSelector consultingYear={consultingYear} setConsultingYear={setConsultingYear} />
           <ColorSelector selectedColor={selectedColor} setSelectedColor={setSelectedColor} />

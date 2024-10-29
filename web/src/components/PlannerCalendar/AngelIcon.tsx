@@ -1,4 +1,4 @@
-import { FILL_COLORS_300 } from 'src/colors'
+import { FILL_COLORS } from 'src/colors'
 
 interface AngelIconProps {
   selectedColor: string
@@ -10,7 +10,7 @@ const AngelIcon = ({ selectedColor }: AngelIconProps) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 750 522"
       fill="none"
-      className={FILL_COLORS_300[selectedColor]}
+      className={FILL_COLORS[selectedColor][300]}
     >
       <path
         fill="#FECACA"
