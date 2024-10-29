@@ -3,12 +3,14 @@ import { useState } from 'react'
 import { MetaTags } from '@redwoodjs/web'
 
 import ConsultingYearSelector from 'src/components/ConsultingYearSelector/ConsultingYearSelector'
+import ColorSelector from 'src/components/ColorSelector/ColorSelector'
 import PlannerCalendar from 'src/components/PlannerCalendar'
 import { useLayoutContext } from 'src/layouts/HomeLayout'
 
 const PlannerPage = () => {
   const currentYear = new Date().getFullYear()
   const [consultingYear, setConsultingYear] = useState(currentYear)
+  const [selectedColor, setSelectedColor] = useState('red')
 
   const {
     urlParams: { birthday: urlBirthday, firstNames, fatherLastNames, motherLastNames },
@@ -26,7 +28,10 @@ const PlannerPage = () => {
       <MetaTags title={pageTitle} description="Planner page" />
 
       <section className="mt-4 flex w-full flex-col bg-red-50">
-        <ConsultingYearSelector consultingYear={consultingYear} setConsultingYear={setConsultingYear} />
+        <div className="navbar flex-wrap justify-center rounded-2xl bg-base-100 shadow-lg">
+          <ConsultingYearSelector consultingYear={consultingYear} setConsultingYear={setConsultingYear} />
+          <ColorSelector selectedColor={selectedColor} setSelectedColor={setSelectedColor} />
+        </div>
 
         {consultingMonths.map((consultingMonth: number) => (
           <div className="break-before-page break-after-page p-16" key={consultingMonth}>
@@ -35,6 +40,7 @@ const PlannerPage = () => {
               name={fullName}
               consultingMonth={consultingMonth}
               consultingYear={consultingYear}
+              selectedColor={selectedColor}
             />
             <div className="divider">Planeador Numerológico de Todo Está Bien</div>
           </div>
