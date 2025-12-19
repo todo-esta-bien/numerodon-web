@@ -87,7 +87,7 @@ const DiamondDiagram = ({ birthday }: IDiamondDiagram) => {
           </text>
           <path className="diamond-st4" d="M301.79,328.18" />
           <text transform="matrix(1 0 0 1 218.768 355.3527)" className="diamond-st2 st3">
-            P
+            VP
           </text>
           <text transform="matrix(1 0 0 1 326.3454 202.1113)" className="diamond-st2 st5">
             {displayReducedNumber(diamondProfile.radiationSource)}
@@ -95,7 +95,7 @@ const DiamondDiagram = ({ birthday }: IDiamondDiagram) => {
           <text transform="matrix(1 0 0 1 325.4462 239.8129)" className="diamond-st2 st5">
             {displayReducedNumber(diamondProfile.starFacet)}
           </text>
-          <text transform="matrix(1 0 0 1 311.7498 297.8519)" className="diamond-st2 st5">
+          <text transform="matrix(1 0 0 1 330.52 297.8519)" className="diamond-st2 st5" textAnchor="middle">
             {displayReducedNumber(diamondProfile.reflect)}
           </text>
           <text transform="matrix(1 0 0 1 406.8838 355.7993)" className="diamond-st2 st5">
